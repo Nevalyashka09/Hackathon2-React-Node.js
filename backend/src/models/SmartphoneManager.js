@@ -5,11 +5,17 @@ class SmartphoneManager extends AbstractManager {
     super({ table: "smartphones" });
   }
 
-  addUser(smartphone) {
-    return this.database.query(
-      `insert into ${this.table} (brand, model, price ) values (?, ?, ?)`,
-      [smartphone.brand, smartphone.model, smartphone.price]
-    );
+  getSmartphonesByBrand(brand) {
+    return this.database.query(`SELECT * FROM smartphones WHERE brand = ?`, [
+      brand,
+    ]);
+  }
+
+  getSmartphonesByModel(model) {
+    return this.database.query(`SELECT * FROM smartphones WHERE model = ?`, [
+      model,
+    ]);
   }
 }
+
 module.exports = SmartphoneManager;
