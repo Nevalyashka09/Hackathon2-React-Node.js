@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE
     users (
-        id int PRIMARY KEY AUTO_INCREMENT,
+        users_id int PRIMARY KEY AUTO_INCREMENT,
         is_admin boolean,
         email varchar(255)
     );
@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS smartphones;
 
 CREATE TABLE
     smartphones (
-        id int PRIMARY KEY AUTO_INCREMENT,
+        smartphones_id int PRIMARY KEY AUTO_INCREMENT,
         brand varchar(255),
         model varchar(255),
         price int
