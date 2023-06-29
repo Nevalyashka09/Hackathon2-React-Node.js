@@ -8,6 +8,7 @@ import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 import Etat from "../components/Etat";
+import ContentFonctionalite from "../components/ContentFonctionalite";
 
 export default function EstimationPage() {
   const {
@@ -83,7 +84,7 @@ export default function EstimationPage() {
             height: "360px",
           }}
         >
-          {timeline === 0 ? <p>Comp 0</p> : ""}
+          {timeline === 0 ? <ContentFonctionalite /> : ""}
           {timeline === 1 ? <p>Comp 1</p> : ""}
           {timeline === 2 ? <p>Comp 2</p> : ""}
           {timeline === 3 ? <p>Comp 3</p> : ""}

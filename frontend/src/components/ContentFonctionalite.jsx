@@ -7,7 +7,7 @@ export default function ContentFonctionalite() {
   const navigate = useNavigate();
   const [alertMessage, setAlertMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  const { isBlocked, setIsBlocked } = useContext(AppContext);
+  const { isBlocked, setIsBlocked, updateTimeline } = useContext(AppContext);
   const [isChecked, setIsChecked] = useState({
     checkbox1: false,
     checkbox2: false,
@@ -38,7 +38,7 @@ export default function ContentFonctionalite() {
       if (isChecked.checkbox5) {
         setIsBlocked(true);
       }
-      navigate("/home");
+      updateTimeline(1);
       console.info(isBlocked);
     }
   };
