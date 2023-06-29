@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import Bot from "./Bot";
+import Bot from "./bot";
 
 const theme = {
   background: "#f5f8fb",
