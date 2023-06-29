@@ -84,6 +84,7 @@ export function AppProvider({ children }) {
   const contextValue = useMemo(
     () => ({
       timeline,
+      setTimeline,
       updateTimeline,
       marque,
       setMarque,

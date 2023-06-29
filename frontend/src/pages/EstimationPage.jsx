@@ -76,7 +76,7 @@ export default function EstimationPage() {
           Estimer un prix
         </h3>
         <TimeLine />
-        <Title text="Fonctionnalité de l’appareil" />
+        <Title text="Quel est la marque du téléphone ?" />
         <div
           style={{
             marginTop: "50px",
