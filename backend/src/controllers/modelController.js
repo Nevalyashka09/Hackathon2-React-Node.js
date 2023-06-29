@@ -13,6 +13,7 @@ const getAllModels = (req, res) => {
 };
 
 const getAllByBrand = (req, res) => {
+  // eslint-disable-next-line prefer-destructuring
   const brandId = req.params.brandId;
   models.model
     .getModelsByBrand(brandId)
