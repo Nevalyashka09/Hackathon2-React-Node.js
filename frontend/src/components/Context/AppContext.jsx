@@ -12,6 +12,35 @@ export function AppProvider({ children }) {
   const [etat, setEtat] = useState("neuf");
   const [isBlocked, setIsBlocked] = useState(false);
 
+  const [deviceWorks, setDeviceWorks] = useState();
+  const [buttonsDeviceWorks, setDesetButtonsdeviceWorks] = useState();
+  const [chargerDeviceWorks, setChargerDeviceWorks] = useState();
+  const [microphoneDeviceWorks, setMicrophoneDeviceWorks] = useState();
+
+  const [estimatedPrice, setEstimatedPrice] = useState();
+  const [seeEstimation, setSeeEstimation] = useState();
+
+  const co2 = 200 + Math.random() * 100;
+
+  const minimalConditions =
+    deviceWorks === true &&
+    buttonsDeviceWorks === true &&
+    chargerDeviceWorks === true &&
+    microphoneDeviceWorks === true &&
+    isBlocked === true;
+
+  const deviceBrandCompleted = minimalConditions && marque !== undefined;
+
+  const deviceInfoCompleted =
+    deviceBrandCompleted &&
+    model !== undefined &&
+    stockage !== undefined &&
+    ram !== undefined;
+
+  const deviceStateCompleted = deviceInfoCompleted && etat !== undefined;
+
+  const recapCompleted = deviceStateCompleted && seeEstimation !== undefined;
+
   const updateTimeline = (value) => {
     setTimeline(value);
   };
