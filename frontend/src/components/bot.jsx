@@ -7,7 +7,7 @@ export default function Bot() {
       <div
         style={{
           position: "fixed",
-          bottom: "20px",
+          bottom: "100px",
           right: "20px",
           zIndex: "9999",
         }}
@@ -17,7 +17,6 @@ export default function Bot() {
             display: "flex",
             justifyContent: "flex-end",
             borderRadius: "10px",
-            marginBottom: "10px",
           }}
         />
         <ChatBot
