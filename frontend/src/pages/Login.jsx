@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className="h-screen flex">
       <div className="w-7/12">
-        <Container className="h-screen bg-blue-50 flex flex-col justify-center">
+        <Container className="h-screen bg-primary-800 flex flex-col justify-center">
           <LoginForm className="flex justify-center items-center" />
         </Container>
       </div>

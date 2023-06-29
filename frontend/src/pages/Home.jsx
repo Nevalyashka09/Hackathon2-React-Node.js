@@ -1,23 +1,16 @@
-/* import Models from "../components/Models";
-import CardLogo from "../components/CardLogo";
-import Stockage from "../components/Stockage"; */
-
-import Stepper from "../components/TimeLine";
-
-import { AppProvider } from "../components/Context/AppContext";
-import CardLogo from "../components/CardLogo";
-import Stockage from "../components/Stockage";
-import Ram from "../components/Ram";
-import Loupe from "../components/Loupe";
+import "../main.scss";
+import ThemeExample from "../components/ThemeExample";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <AppProvider>
-      <Stepper />
-      <CardLogo />
-      <Stockage />
-      <Ram />
-      <Loupe />
-    </AppProvider>
+    <div>
+      <h1>Test</h1>;
+      <NavBar />
+      <h1>Estimer un prix</h1>
+      <ThemeExample />
+      <Footer />
+    </div>
   );
 }
