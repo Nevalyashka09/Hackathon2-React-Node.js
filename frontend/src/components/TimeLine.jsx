@@ -10,10 +10,12 @@ export default function StepperComponent() {
 
   const steps = [
     "Fonctionnalités",
+    "Marque",
     "Données",
     "Accessoires",
     "État",
     "Récapitulatif",
+    "Prix",
   ];
 
   return (

@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   Paper,
   List,
@@ -7,10 +8,21 @@ import {
   Divider,
   Button,
 } from "@mui/material";
+import AppContext from "./Context/AppContext";
 import ModifierButton from "./ModifierButton";
+import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
 function ContentRecap() {
-  const handleClick = (e) => {}; // TODO: handleClick
+  const { model, stockage, etat, chargerDeviceWorks, updateTimeline } =
+    useContext(AppContext);
+  console.info("model est", model);
+  const handleClick = () => {
+    updateTimeline(6);
+  };
+
+  const handleClickData = () => {
+    updateTimeline(2);
+  };
 
   return (
     <div className="w-full">
@@ -23,11 +35,15 @@ function ContentRecap() {
             />
             <div className="flex gap-10">
               <ListItemText
-                primary={
-                  <Typography variant="h6">iPhone 13 Pro Max</Typography>
-                }
+                primary={<Typography variant="h6">{model}</Typography>}
               />
-              <ModifierButton />
+              <button
+                type="button"
+                className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
+                onClick={() => updateTimeline(1)}
+              >
+                <PencilSquareIcon className="text-white h-6 w-6" />
+              </button>
             </div>
           </ListItem>
           <Divider />
@@ -38,9 +54,15 @@ function ContentRecap() {
             />
             <div className="flex gap-10">
               <ListItemText
-                primary={<Typography variant="h6">250 Go</Typography>}
+                primary={<Typography variant="h6">{stockage}</Typography>}
               />
-              <ModifierButton />
+              <button
+                type="button"
+                className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
+                onClick={() => updateTimeline(2)}
+              >
+                <PencilSquareIcon className="text-white h-6 w-6" />
+              </button>
             </div>
           </ListItem>
           {/* Accessoires */}
@@ -54,26 +76,36 @@ function ContentRecap() {
               <ListItemText
                 primary={
                   <Typography variant="h6">
-                    Chargeur : oui
-                    <br />
-                    Ecouteurs : non
+                    Chargeur :
+                    {chargerDeviceWorks ? <span> Oui</span> : <span> Non</span>}
                   </Typography>
                 }
               />
-              <ModifierButton />
+              <button
+                type="button"
+                className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
+                onClick={() => updateTimeline(3)}
+              >
+                <PencilSquareIcon className="text-white h-6 w-6" />
+              </button>
             </div>
           </ListItem>
           <Divider light />
-          {/* État */}
           <ListItem button>
             <ListItemText
               secondary={<Typography variant="subtitle1">État</Typography>}
             />
             <div className="flex gap-10">
               <ListItemText
-                primary={<Typography variant="h6">Parfait état</Typography>}
+                primary={<Typography variant="h6">{etat}</Typography>}
               />
-              <ModifierButton />
+              <button
+                type="button"
+                className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
+                onClick={() => updateTimeline(4)}
+              >
+                <PencilSquareIcon className="text-white h-6 w-6" />
+              </button>
             </div>
           </ListItem>
         </List>
