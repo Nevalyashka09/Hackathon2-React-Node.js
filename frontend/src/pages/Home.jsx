@@ -9,6 +9,7 @@ import CardImpactCO2 from "../components/CardImpactCO2";
 export default function Home() {
   return (
     <div>
+      <h1>Test</h1>
       <NavBar />
       <ThemedExample />
       <div className="flex">

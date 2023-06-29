@@ -1,103 +1,110 @@
 import "../main.scss";
-import { useState, useEffect } from "react";
-import { AppProvider } from "../components/Context/AppContext";
+import { useState, useEffect, useContext } from "react";
+import AppContext from "../components/Context/AppContext";
 import ThemeExample from "../components/ThemeExample";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import Etat from "../components/Etat";
 
 export default function EstimationPage() {
-  const [brands, setBrands] = useState([]);
-  const [models, setModels] = useState([]);
-  const [storages, setStorage] = useState([]);
-  const [rams, setRams] = useState([]);
+  const {
+    timeline,
+    setTimeline,
+    minimalConditions,
+    deviceBrandCompleted,
+    deviceInfoCompleted,
+    deviceStateCompleted,
+    recapCompleted,
+  } = useContext(AppContext);
 
-  const [deviceWorks, setDeviceWorks] = useState();
-  const [buttonsDeviceWorks, setDesetButtonsdeviceWorks] = useState();
-  const [chargerDeviceWorks, setChargerDeviceWorks] = useState();
-  const [microphoneDeviceWorks, setMicrophoneDeviceWorks] = useState();
-  const [deviceIsBlocked, setDeviceIsBlocked] = useState();
-
-  const [selectedBrand, setSelectBrand] = useState();
-  const [selectedModel, setSelectedModel] = useState();
-  const [selectedStorage, setSelectedStorage] = useState();
-  const [selectedRam, setSelectedRam] = useState();
-  const [selectedState, setSelectedState] = useState();
-
-  const [estimatedPrice, setEstimatedPrice] = useState();
-  const saving = estimatedPrice - models.price;
-  const co2 = 200 + Math.random() * 100;
+  const [initialLoading, setInitialLoading] = useState(false);
 
   useEffect(() => {
-    fetch("brands", setBrands);
-    fetch("storages", setStorage);
-    fetch("rams", setRams);
-    fetch("models", setModels);
-  }, []);
+    setInitialLoading(true);
+    console.info("initialoading is", initialLoading);
 
-  // pour information dans la console
-  useEffect(() => {
-    console.info("brands", brands);
-  }, [brands]);
-
-  useEffect(() => {
-    console.info("storages", storages);
-  }, [storages]);
-
-  useEffect(() => {
-    console.info("rams", rams);
-  }, [rams]);
-
-  useEffect(() => {
-    console.info("models", models);
-  }, [models]);
+    if (initialLoading === true) {
+      if (minimalConditions) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (deviceBrandCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (deviceInfoCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (deviceStateCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (recapCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+    }
+  }, [
+    minimalConditions,
+    deviceBrandCompleted,
+    deviceInfoCompleted,
+    deviceStateCompleted,
+    recapCompleted,
+  ]);
 
   return (
     <div>
-      <AppProvider>
-        <NavBar />
-        <div className="flex flex-col items-center">
-          <h3
-            style={{
-              fontSize: "30px",
-              marginTop: "20px",
-            }}
-          >
-            Estimer un prix
-          </h3>
-          <TimeLine />
-          <Title text="Fonctionnalité de l’appareil" />
-          <div
-            style={{
-              marginTop: "50px",
-              marginBottom: "50px",
-              width: "650px",
-              height: "360px",
-              backgroundColor: "#FFD0D0",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            Hello Bob
-          </div>
-          <img
-            style={{
-              marginLeft: "10vw",
-              marginRight: "10vw",
-              zIndex: "-1",
-              position: "absolute",
-              top: "30vh",
-            }}
-            src={Phone}
-            alt=""
-          />
+      <NavBar />
+      <div className="flex flex-col items-center">
+        <h3
+          style={{
+            fontSize: "30px",
+            marginTop: "20px",
+          }}
+        >
+          Estimer un prix
+        </h3>
+        <TimeLine />
+        <Title text="Fonctionnalité de l’appareil" />
+        <div
+          style={{
+            marginTop: "50px",
+            marginBottom: "50px",
+            width: "650px",
+            height: "360px",
+          }}
+        >
+          {timeline === 0 ? <p>Comp 0</p> : ""}
+          {timeline === 1 ? <p>Comp 1</p> : ""}
+          {timeline === 2 ? <p>Comp 2</p> : ""}
+          {timeline === 3 ? <p>Comp 3</p> : ""}
+          {timeline === 4 ? <Etat /> : ""}
+          {timeline === 5 ? <p>Comp 5</p> : ""}
         </div>
-        <ThemeExample />
-        <Footer />
-      </AppProvider>
+        <img
+          style={{
+            marginLeft: "10vw",
+            marginRight: "10vw",
+            zIndex: "-1",
+            position: "absolute",
+            top: "30vh",
+          }}
+          src={Phone}
+          alt=""
+        />
+      </div>
+
+      <ThemeExample />
+      <Footer />
     </div>
   );
 }
