@@ -17,7 +17,7 @@ export default function StepperComponent() {
   const { timeline } = useContext(AppContext);
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box className="mt-8" sx={{ width: "100%" }}>
       <Stepper activeStep={timeline} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
