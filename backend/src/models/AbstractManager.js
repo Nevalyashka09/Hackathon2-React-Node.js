@@ -3,15 +3,21 @@ class AbstractManager {
     this.table = table;
   }
 
-  find(id) {
+  findAll() {
+    return this.database.query(`select * from  ${this.table}`);
+  }
+
+  findById(id) {
     return this.database.query(
       `select * from  ${this.table} where ${this.table}_id = ?`,
       [id]
     );
   }
 
-  findAll() {
-    return this.database.query(`select * from  ${this.table}`);
+  findByEmail(mail) {
+    return this.database.query(`SELECT * FROM ${this.table} WHERE email = ?`, [
+      mail,
+    ]);
   }
 
   delete(id) {
