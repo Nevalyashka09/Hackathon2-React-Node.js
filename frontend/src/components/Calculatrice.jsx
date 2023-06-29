@@ -1,68 +1,94 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import AppContext from "./Context/AppContext";
 
 function Calculatrice() {
-  const { stockage, ram, model, etat, isBlocked } = useContext(AppContext);
+  const { stockage, ram, etat, isBlocked, selectedModel, setNewPrice } =
+    useContext(AppContext);
 
-  const basePrice = 500; // Prix de base du smartphone
+  let totalPrice = selectedModel.price;
 
-  const Prixfinal = () => {
-    let totalPrice = basePrice;
-
-    // Calcul en fonction du modèle
-    // Remplacer les valeurs des modèles par les prix réels correspondants
-    if (model === "Modèle1") {
-      totalPrice += 100;
-    } else if (model === "Modèle2") {
-      totalPrice += 200;
-    } else if (model === "Modèle3") {
-      totalPrice += 300;
-    }
-
-    // Calcul en fonction de la RAM
-    if (ram === 1) {
+  // Calcul en fonction de la RAM
+  switch (ram) {
+    case 1:
       totalPrice += 30;
-    } else if (ram === 2) {
+      break;
+    case 2:
       totalPrice += 40;
-    } else if (ram === 3) {
+      break;
+    case 3:
       totalPrice += 54;
-    }
+      break;
+    case 4:
+      totalPrice += 72;
+      break;
+    case 6:
+      totalPrice += 94;
+      break;
+    case 8:
+      totalPrice += 120;
+      break;
+    case 12:
+      totalPrice += 150;
+      break;
+    case 16:
+      totalPrice += 184;
+      break;
+    default:
+      break;
+  }
 
-    // Calcul en fonction du stockage
-    if (stockage === 16) {
+  // Calcul en fonction du stockage
+  switch (stockage) {
+    case 16:
       totalPrice += 31;
-    } else if (stockage === 32) {
+      break;
+    case 32:
       totalPrice += 45;
-    } else if (stockage === 64) {
+      break;
+    case 64:
       totalPrice += 66;
-    }
+      break;
+    case 128:
+      totalPrice += 94;
+      break;
+    case 256:
+      totalPrice += 129;
+      break;
+    case 512:
+      totalPrice += 171;
+      break;
+    case 1024:
+      totalPrice += 220;
+      break;
+    default:
+      break;
+  }
 
-    // Calcul en fonction de l'état du téléphone
-    if (etat === "DEEE") {
-      totalPrice = 0; // Perd 100% du prix
-    } else if (etat === "abimé") {
-      totalPrice *= 0.5; // Perd 50% du prix
-    } else if (etat === "reconditionnable") {
-      totalPrice *= 0.9; // Perd 10% du prix
-    } else if (etat === "bon etat") {
-      totalPrice *= 1; // Garde son prix
-    } else if (etat === "neuf") {
-      totalPrice *= 1.1; // Gagne 10% du prix
-    }
+  // Calcul en fonction de l'état du téléphone
+  switch (etat) {
+    case "réparable":
+      totalPrice *= 0.5;
+      break;
+    case "abimé":
+      totalPrice *= 0.7;
+      break;
+    case "reconditionné":
+      totalPrice *= 0.9;
+      break;
+    case "trés bon etat":
+      totalPrice *= 1;
+      break;
+    default:
+      break;
+  }
 
-    // Calcul en fonction du blocage du téléphone
-    if (isBlocked) {
-      totalPrice *= 0.9; // Perd 10% du prix
-    }
+  // Calcul en fonction du blocage du téléphone
+  if (isBlocked) {
+    totalPrice *= 0.9;
+  }
 
-    return totalPrice;
-  };
-
-  return (
-    <div>
-      <h2>{Prixfinal}</h2>
-    </div>
-  );
+  // Mettre à jour la state newPrice
+  setNewPrice(totalPrice);
 }
 
 export default Calculatrice;
