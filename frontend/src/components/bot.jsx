@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ChatBot from "react-simple-chatbot";
+import Button from "@mui/material/Button";
 import eric from "../assets/images/eric.png";
-import Button from '@mui/material/Button';
 
 export default function Bot() {
   const [isVisible, setIsVisible] = useState(false);
