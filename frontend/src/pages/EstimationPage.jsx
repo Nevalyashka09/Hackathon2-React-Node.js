@@ -10,43 +10,55 @@ import Title from "../components/Title";
 
 export default function EstimationPage() {
   const {
+    timeline,
+    setTimeline,
     minimalConditions,
     deviceBrandCompleted,
     deviceInfoCompleted,
     deviceStateCompleted,
     recapCompleted,
-    seeEstimation,
   } = useContext(AppContext);
 
-  const [brands, setBrands] = useState([]);
-  const [models, setModels] = useState([]);
-  const [storages, setStorage] = useState([]);
-  const [rams, setRams] = useState([]);
+  const [initialLoading, setInitialLoading] = useState(false);
 
   useEffect(() => {
-    fetch("brands", setBrands);
-    fetch("storages", setStorage);
-    fetch("rams", setRams);
-    fetch("models", setModels);
-  }, []);
+    setInitialLoading(true);
+    console.info("initialoading is", initialLoading);
 
-  // pour information dans la console
-
-  useEffect(() => {
-    console.info("brands", brands);
-  }, [brands]);
-
-  useEffect(() => {
-    console.info("storages", storages);
-  }, [storages]);
-
-  useEffect(() => {
-    console.info("rams", rams);
-  }, [rams]);
-
-  useEffect(() => {
-    console.info("models", models);
-  }, [models]);
+    if (initialLoading === true) {
+      if (minimalConditions) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (deviceBrandCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (deviceInfoCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (deviceStateCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+      if (recapCompleted) {
+        setTimeline((prevTimeline) => prevTimeline + 1);
+      } else {
+        setTimeline((prevTimeline) => prevTimeline - 1);
+      }
+    }
+  }, [
+    minimalConditions,
+    deviceBrandCompleted,
+    deviceInfoCompleted,
+    deviceStateCompleted,
+    recapCompleted,
+  ]);
 
   return (
     <div>
@@ -72,6 +84,12 @@ export default function EstimationPage() {
           }}
         >
           Hello Bob
+          {timeline === 0 ? <p>Comp 0</p> : ""}
+          {timeline === 1 ? <p>Comp 1</p> : ""}
+          {timeline === 2 ? <p>Comp 2</p> : ""}
+          {timeline === 3 ? <p>Comp 3</p> : ""}
+          {timeline === 4 ? <p>Comp 4</p> : ""}
+          {timeline === 5 ? <p>Comp 5</p> : ""}
         </div>
         <img
           style={{
@@ -91,29 +109,3 @@ export default function EstimationPage() {
     </div>
   );
 }
-
-// RENDU CONDITIONNEL DE TEST pour les futurs composants
-
-// {
-//   minimalConditions !== undefined && !minimalConditions && <Modal />;
-// }
-
-// {
-//   minimalConditions !== undefined && minimalConditions && <Brand />;
-// }
-
-// {
-//   deviceBrandCompleted && <Infos />;
-// }
-
-// {
-//   deviceInfoCompleted && <State />;
-// }
-
-// {
-//   deviceStateCompleted && <Recap />;
-// }
-
-// {
-//   recapCompleted && <Price />;
-// }
