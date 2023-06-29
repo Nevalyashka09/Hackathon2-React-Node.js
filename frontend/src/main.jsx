@@ -9,6 +9,7 @@ import Root from "./routes/Root";
 import MaxLengthProvider from "./context/MaxLengthContext";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import EstimationPage from "./pages/EstimationPage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/estimation",
+        element: <EstimationPage />,
       },
     ],
   },
