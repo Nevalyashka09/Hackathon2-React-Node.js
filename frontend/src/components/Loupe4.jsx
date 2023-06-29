@@ -1,27 +1,30 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import image from "../assets/images/Abime.png";
 
-function Loupe({ image }) {
-  console.info(image);
+function Loupe4() {
   const [loupePosition, setLoupePosition] = useState({
     left: 0,
     top: 0,
   });
-  const [isClicked, setIsClicked] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
     const loupe = document.getElementById("loupe");
 
     setLoupePosition({ left: clientX, top: clientY });
-    loupe.style.backgroundSize = `${500 * 2}px`;
+    loupe.style.backgroundSize = `${250 * 2}px`;
     loupe.style.backgroundPosition = `${-loupe.offsetLeft * 2 - 50}px ${
       -loupe.offsetTop * 2 - 300
     }px`;
   };
 
-  const handleClick = () => {
-    setIsClicked(!isClicked);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   const loupeStyle = {
@@ -37,7 +40,7 @@ function Loupe({ image }) {
     top: loupePosition.top,
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
-    display: isClicked ? "block" : "none",
+    display: isHovered ? "block" : "none",
   };
 
   const bodyStyle = {
@@ -45,33 +48,23 @@ function Loupe({ image }) {
     minHeight: "15vh",
     maxWidth: "25vh",
     backgroundImage: `url(${image})`,
-    backgroundSize: "500px",
+    backgroundSize: "250px",
     backgroundRepeat: "no-repeat",
-    cursor: "pointer",
+    cursor: "none",
     overflow: "hidden",
-    borderRadius: "30px 30px 0 0",
+    borderRadius: "30px",
   };
-
-  useEffect(() => {
-    console.info("img", image);
-  });
 
   return (
     <div
       style={bodyStyle}
       onMouseMove={handleMouseMove}
-      onClick={handleClick}
-      onKeyDown={handleClick}
-      role="button"
-      tabIndex={0}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div id="loupe" style={loupeStyle} />
     </div>
   );
 }
 
-Loupe.propTypes = {
-  image: PropTypes.string.isRequired,
-};
-
-export default Loupe;
+export default Loupe4;

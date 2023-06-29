@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
-function Loupe({ image }) {
-  console.info(image);
+import image from "../assets/images/Reparable.png";
+
+function Loupe2() {
   const [loupePosition, setLoupePosition] = useState({
     left: 0,
     top: 0,
@@ -14,7 +14,7 @@ function Loupe({ image }) {
     const loupe = document.getElementById("loupe");
 
     setLoupePosition({ left: clientX, top: clientY });
-    loupe.style.backgroundSize = `${500 * 2}px`;
+    loupe.style.backgroundSize = `${250 * 2}px`;
     loupe.style.backgroundPosition = `${-loupe.offsetLeft * 2 - 50}px ${
       -loupe.offsetTop * 2 - 300
     }px`;
@@ -45,11 +45,11 @@ function Loupe({ image }) {
     minHeight: "15vh",
     maxWidth: "25vh",
     backgroundImage: `url(${image})`,
-    backgroundSize: "500px",
+    backgroundSize: "250px",
     backgroundRepeat: "no-repeat",
     cursor: "pointer",
     overflow: "hidden",
-    borderRadius: "30px 30px 0 0",
+    borderRadius: "30px",
   };
 
   useEffect(() => {
@@ -70,8 +70,4 @@ function Loupe({ image }) {
   );
 }
 
-Loupe.propTypes = {
-  image: PropTypes.string.isRequired,
-};
-
-export default Loupe;
+export default Loupe2;
