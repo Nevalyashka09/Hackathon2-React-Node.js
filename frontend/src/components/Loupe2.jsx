@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
-function Loupe({ id, image }) {
+import image from "../assets/images/Reparable.png";
+
+function Loupe2() {
   const [loupePosition, setLoupePosition] = useState({
     left: 0,
-    top: -50,
+    top: 0,
   });
   const [isClicked, setIsClicked] = useState(false);
-  const [isCursorVisible, setIsCursorVisible] = useState(true);
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
-    const loupe = document.getElementById(`loupe-${id}`);
+    const loupe = document.getElementById("loupe");
 
-    const loupeSize = 150;
-
-    const loupeX = clientX - loupeSize / 2;
-    const loupeY = clientY - loupeSize / 2;
-
-    setLoupePosition({ left: loupeX, top: loupeY });
-
-    loupe.style.backgroundSize = `${300 * 2}px`;
+    setLoupePosition({ left: clientX, top: clientY });
+    loupe.style.backgroundSize = `${250 * 2}px`;
     loupe.style.backgroundPosition = `${-loupe.offsetLeft * 2 - 50}px ${
       -loupe.offsetTop * 2 - 300
     }px`;
@@ -30,18 +24,10 @@ function Loupe({ id, image }) {
     setIsClicked(!isClicked);
   };
 
-  const handleMouseEnter = () => {
-    setIsCursorVisible(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsCursorVisible(true);
-  };
-
   const loupeStyle = {
     margin: -20,
-    width: "150px",
-    height: "150px",
+    width: "100px",
+    height: "100px",
     border: "solid 6px #fff",
     borderRadius: "200px",
     position: "absolute",
@@ -52,44 +38,36 @@ function Loupe({ id, image }) {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
     display: isClicked ? "block" : "none",
-    transform: "translate(-10%, -10%)",
   };
 
   const bodyStyle = {
     padding: "30px",
     minHeight: "15vh",
-    maxWidth: "30vw",
+    maxWidth: "25vh",
     backgroundImage: `url(${image})`,
-    backgroundSize: "255px",
+    backgroundSize: "250px",
     backgroundRepeat: "no-repeat",
-    cursor: isCursorVisible ? "auto" : "none",
+    cursor: "pointer",
     overflow: "hidden",
-    borderRadius: "30px 30px 0 0",
+    borderRadius: "30px",
   };
 
   useEffect(() => {
-    document.body.style.cursor = isCursorVisible ? "auto" : "none";
-  }, [isCursorVisible]);
+    console.info("img", image);
+  });
 
   return (
     <div
       style={bodyStyle}
       onMouseMove={handleMouseMove}
       onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onKeyDown={handleClick}
       role="button"
       tabIndex={0}
     >
-      <div id={`loupe-${id}`} style={loupeStyle} />{" "}
+      <div id="loupe" style={loupeStyle} />
     </div>
   );
 }
 
-Loupe.propTypes = {
-  id: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-};
-
-export default Loupe;
+export default Loupe2;
