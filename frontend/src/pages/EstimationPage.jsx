@@ -23,11 +23,6 @@ export default function EstimationPage() {
   const [initialLoading, setInitialLoading] = useState(false);
 
   useEffect(() => {
-    console.info("valeur de timeline;", timeline);
-    console.info("valeur de minimalConditions;", minimalConditions);
-  }, []);
-
-  useEffect(() => {
     setInitialLoading(true);
     console.info("initialoading is", initialLoading);
 
