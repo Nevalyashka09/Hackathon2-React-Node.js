@@ -10,6 +10,7 @@ export function AppProvider({ children }) {
   const [stockage, setStockage] = useState("");
   const [ram, setRam] = useState("");
   const [etat, setEtat] = useState("");
+  const [isBlocked, setIsBlocked] = useState(false);
 
   const updateTimeline = (value) => {
     setTimeline(value);
@@ -29,8 +30,10 @@ export function AppProvider({ children }) {
       setRam,
       etat,
       setEtat,
+      isBlocked,
+      setIsBlocked,
     }),
-    [timeline, marque, model, stockage, ram, etat]
+    [timeline, marque, model, stockage, ram, etat, isBlocked]
   );
 
   return (
