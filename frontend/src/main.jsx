@@ -28,11 +28,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <MaxLengthProvider>
+  <StyledEngineProvider injectFirst>
+    <MaxLengthProvider>
         <RouterProvider router={router} />
-      </MaxLengthProvider>
-    </StyledEngineProvider>
-  </React.StrictMode>
+    </MaxLengthProvider>
+  </StyledEngineProvider>
 );

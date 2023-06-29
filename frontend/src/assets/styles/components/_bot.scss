@@ -1,0 +1,42 @@
+.chatBotDiv {
+    position: fixed;
+    margin-left: 80vw;
+    margin-top: 64vh;
+    z-index: 9999;
+    bottom: 5px;
+    right: 5px;
+  }
+  
+  .botButton {
+    background-color: red;
+    width: 50px;
+    font-size: 2rem;
+    border-width: 0 0 0 0;
+    z-index: 9999;
+    margin-top: 45px;
+    left: 5px;
+    color: white;
+  }
+  
+  .chatButtonDiv {
+    bottom: 50px;
+    bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    border-radius: 10px;
+  }
+  
+  .irIdto {
+    max-height: 320px;
+    max-width: 270px;
+  }
+
+  
+  .fBGGBn {
+    max-height: 200px;
+  }
+  
+  .fhAWVE {
+    background: #00698b !important;
+  }
