@@ -1,10 +1,10 @@
 import "../main.scss";
-import Bot from "../components/Bot";
+import ThemeExample from "../components/ThemeExample";
 
 export default function Home() {
   return (
     <div>
-      <Bot />
+      <ThemeExample />
       <h1>Test</h1>;
     </div>
   );

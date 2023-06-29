@@ -10,7 +10,7 @@
 
 @layer base {
   html {
-    font-family: Roboto, system-ui, sans-serif;
+    font-family: Rubik, system-ui, sans-serif;
   }
 
   h1 {
@@ -31,6 +31,13 @@
 
   h5 {
     @apply text-zinc-500 text-lg py-2;
+  }
+
+  @layer utilities{
+    .hvGjDQ{
+      height: calc(520px - 100px);
+      background-color: red;
+    }
   }
 
   @variants responsive {
