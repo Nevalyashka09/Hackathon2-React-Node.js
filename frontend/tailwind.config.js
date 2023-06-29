@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        rubik: ["Rubik", "sans-serif"],
+        rubik: ["Rubik", "system-ui", "sans-serif"],
       },
       transitionDuration: {
         2000: "2000ms",

@@ -8,7 +8,7 @@ import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 
-export default function Home() {
+export default function EstimationPage() {
   const {
     minimalConditions,
     deviceBrandCompleted,

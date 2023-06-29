@@ -9,8 +9,9 @@ export function AppProvider({ children }) {
   const [model, setModel] = useState("");
   const [stockage, setStockage] = useState(64);
   const [ram, setRam] = useState(2);
-  const [etat, setEtat] = useState("neuf");
+  const [etat, setEtat] = useState("abimé");
   const [isBlocked, setIsBlocked] = useState(false);
+  const [newPrice, setNewPrice] = useState(0);
 
   const [deviceWorks, setDeviceWorks] = useState();
   const [buttonsDeviceWorks, setDesetButtonsdeviceWorks] = useState();
@@ -61,8 +62,10 @@ export function AppProvider({ children }) {
       setEtat,
       isBlocked,
       setIsBlocked,
+      newPrice,
+      setNewPrice,
     }),
-    [timeline, marque, model, stockage, ram, etat, isBlocked]
+    [timeline, marque, model, stockage, ram, etat, isBlocked, newPrice]
   );
 
   useEffect(() => {
