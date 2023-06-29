@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [timeline, setTimeline] = useState(0);
+  const [timeline, setTimeline] = useState(4);
 
   // Selections de l'utilisateur
   const [marque, setMarque] = useState();
@@ -17,21 +17,18 @@ export function AppProvider({ children }) {
 
   const [isBlocked, setIsBlocked] = useState();
   const [deviceWorks, setDeviceWorks] = useState();
-  const [buttonsDeviceWorks, setDesetButtonsdeviceWorks] = useState();
+  const [buttonsDeviceWorks, setButtonsdeviceWorks] = useState();
 
   const [chargerDeviceWorks, setChargerDeviceWorks] = useState();
   const [microphoneDeviceWorks, setMicrophoneDeviceWorks] = useState();
   const [newPrice, setNewPrice] = useState();
 
-  // Données pour les boutons select
+  // Données pour les boutons select récupérées depuis le back
 
   const [brands, setBrands] = useState([]);
   const [models, setModels] = useState([]);
   const [storages, setStorages] = useState([]);
   const [rams, setRams] = useState([]);
-
-  // Lorsque l'utilisateur clique sur "voir l'estimation", passer la state à true
-  const [seeEstimation, setSeeEstimation] = useState();
 
   const co2 = 200 + Math.random() * 100;
 
@@ -51,11 +48,11 @@ export function AppProvider({ children }) {
 
   const deviceStateCompleted = etat !== undefined;
 
-  const recapCompleted = seeEstimation !== undefined;
-
   const updateTimeline = (value) => {
     setTimeline(value);
   };
+
+  // Récupère les données depuis le back
 
   useEffect(() => {
     fetch("brands", setBrands);
@@ -102,8 +99,43 @@ export function AppProvider({ children }) {
       setIsBlocked,
       newPrice,
       setNewPrice,
+      brands,
+      models,
+      storages,
+      rams,
+      deviceWorks,
+      buttonsDeviceWorks,
+      chargerDeviceWorks,
+      microphoneDeviceWorks,
+      minimalConditions,
+      deviceBrandCompleted,
+      deviceInfoCompleted,
+      deviceStateCompleted,
+      co2,
     }),
-    [timeline, marque, model, stockage, ram, etat, isBlocked, newPrice]
+    [
+      timeline,
+      marque,
+      model,
+      stockage,
+      ram,
+      etat,
+      isBlocked,
+      newPrice,
+      brands,
+      models,
+      storages,
+      rams,
+      deviceWorks,
+      buttonsDeviceWorks,
+      chargerDeviceWorks,
+      microphoneDeviceWorks,
+      minimalConditions,
+      deviceBrandCompleted,
+      deviceInfoCompleted,
+      deviceStateCompleted,
+      co2,
+    ]
   );
 
   useEffect(() => {

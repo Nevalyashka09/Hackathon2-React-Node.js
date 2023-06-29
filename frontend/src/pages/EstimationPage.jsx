@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import Etat from "../components/Etat";
 
 export default function EstimationPage() {
   const {
@@ -20,6 +21,11 @@ export default function EstimationPage() {
   } = useContext(AppContext);
 
   const [initialLoading, setInitialLoading] = useState(false);
+
+  useEffect(() => {
+    console.info("valeur de timeline;", timeline);
+    console.info("valeur de minimalConditions;", minimalConditions);
+  }, []);
 
   useEffect(() => {
     setInitialLoading(true);
@@ -80,15 +86,13 @@ export default function EstimationPage() {
             marginBottom: "50px",
             width: "650px",
             height: "360px",
-            backgroundColor: "#FFD0D0",
           }}
         >
-          Hello Bob
           {timeline === 0 ? <p>Comp 0</p> : ""}
           {timeline === 1 ? <p>Comp 1</p> : ""}
           {timeline === 2 ? <p>Comp 2</p> : ""}
           {timeline === 3 ? <p>Comp 3</p> : ""}
-          {timeline === 4 ? <p>Comp 4</p> : ""}
+          {timeline === 4 ? <Etat /> : ""}
           {timeline === 5 ? <p>Comp 5</p> : ""}
         </div>
         <img
