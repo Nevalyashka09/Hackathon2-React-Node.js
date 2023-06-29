@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-function Loupe({ image }) {
+function Loupe({ id, image }) {
   const [loupePosition, setLoupePosition] = useState({
     left: 0,
-    top: 0,
+    top: -50,
   });
   const [isClicked, setIsClicked] = useState(false);
   const [isCursorVisible, setIsCursorVisible] = useState(true);
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
-    const loupe = document.getElementById("loupe");
+    const loupe = document.getElementById(`loupe-${id}`);
 
-    setLoupePosition({ left: clientX, top: clientY });
+    const loupeSize = 150;
+
+    const loupeX = clientX - loupeSize / 2;
+    const loupeY = clientY - loupeSize / 2;
+
+    setLoupePosition({ left: loupeX, top: loupeY });
+
     loupe.style.backgroundSize = `${300 * 2}px`;
     loupe.style.backgroundPosition = `${-loupe.offsetLeft * 2 - 50}px ${
       -loupe.offsetTop * 2 - 300
@@ -34,8 +40,8 @@ function Loupe({ image }) {
 
   const loupeStyle = {
     margin: -20,
-    width: "100px",
-    height: "100px",
+    width: "150px",
+    height: "150px",
     border: "solid 6px #fff",
     borderRadius: "200px",
     position: "absolute",
@@ -46,6 +52,7 @@ function Loupe({ image }) {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
     display: isClicked ? "block" : "none",
+    transform: "translate(-10%, -10%)",
   };
 
   const bodyStyle = {
@@ -75,12 +82,13 @@ function Loupe({ image }) {
       role="button"
       tabIndex={0}
     >
-      <div id="loupe" style={loupeStyle} />
+      <div id={`loupe-${id}`} style={loupeStyle} />{" "}
     </div>
   );
 }
 
 Loupe.propTypes = {
+  id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
 

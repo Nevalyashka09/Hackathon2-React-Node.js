@@ -1,7 +1,7 @@
 import React from "react";
 import Loupe from "./Loupe";
 import data from "../BaseDeDonnées/Photo";
-import OverlayEtat from "../components/OverlayEtat";
+import OverlayEtat from "./OverlayEtat";
 
 function Etat() {
   return (
@@ -25,7 +25,7 @@ function Etat() {
           }}
           key={item.id}
         >
-          <Loupe image={item.photo} />
+          <Loupe id={item.id} image={item.photo} />
           <div
             style={{
               borderRadius: "0 0 30px 30px ",
