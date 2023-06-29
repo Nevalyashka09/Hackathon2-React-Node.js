@@ -26,4 +26,6 @@ router.get("/rams", ramControllers.getAllRams);
 
 router.get("/models", modelControllers.getAllModels);
 
+router.get("/models/:brandId", modelControllers.getAllByBrand);
+
 module.exports = router;

@@ -7,7 +7,14 @@ class ModelManager extends AbstractManager {
 
   getModels() {
     return this.database.query(
-      `SELECT * FROM ${this.table} INNER JOIN brands ON ${this.table}.brands_id = brands.brands_id`
+      `SELECT m.name AS model_name, b.name AS brand_name FROM ${this.table} m JOIN brands b ON m.brands_id = b.brands_id`
+    );
+  }
+
+  getModelsByBrand(brandId) {
+    return this.database.query(
+      `SELECT m.name AS model_name, b.name AS brand_name FROM ${this.table} m JOIN brands b ON m.brands_id = b.brands_id WHERE m.brands_id = ?`,
+      [brandId]
     );
   }
 }
