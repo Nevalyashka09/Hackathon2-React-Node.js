@@ -65,7 +65,7 @@ export default function Home() {
               marginTop: "20px",
             }}
           >
-            Estimate Price
+            Estimer un prix
           </h3>
           <TimeLine />
           <Title text="Fonctionnalité de l’appareil" />
