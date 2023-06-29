@@ -1,5 +1,5 @@
 import "../main.scss";
-import Bot from "../components/bot";
+import Bot from "../components/Bot";
 
 export default function Home() {
   return (
