@@ -5,6 +5,12 @@ class SmartphoneManager extends AbstractManager {
     super({ table: "smartphones" });
   }
 
+  getSmartphones() {
+    return this.database.query(
+      `SELECT * FROM smartphones INNER JOIN brands ON smartphones.brands_id = brands.brands_id`
+    );
+  }
+
   getSmartphonesByBrand(brand) {
     return this.database.query(`SELECT * FROM smartphones WHERE brand = ?`, [
       brand,
