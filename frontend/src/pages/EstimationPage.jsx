@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import ContentRecap from "../components/ContentRecap";
 
 export default function EstimationPage() {
   const [brands, setBrands] = useState([]);
@@ -68,7 +69,7 @@ export default function EstimationPage() {
             Estimer un prix
           </h3>
           <TimeLine />
-          <Title text="Fonctionnalité de l’appareil" />
+          <Title text="Récapitualitf des paramètres" />
           <div
             style={{
               marginTop: "50px",
@@ -81,7 +82,7 @@ export default function EstimationPage() {
               alignItems: "center",
             }}
           >
-            Hello Bob
+            <ContentRecap />
           </div>
           <img
             style={{
