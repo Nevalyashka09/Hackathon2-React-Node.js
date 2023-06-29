@@ -1,8 +1,8 @@
 import "../main.scss";
-import ThemeExample from "../components/ThemeExample";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import Etat from "../components/Etat";
+
+import ThemeExample from "../components/ThemeExample";
 
 export default function Home() {
   return (
@@ -11,7 +11,6 @@ export default function Home() {
       <NavBar />
       <h1>Estimer un prix </h1>
       <ThemeExample />
-      <Etat />
 
       <Footer />
     </div>

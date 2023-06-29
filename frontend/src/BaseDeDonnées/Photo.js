@@ -7,18 +7,22 @@ const data = [
   {
     id: 0,
     photo: Abime,
+    name: "Abimé",
   },
   {
     id: 1,
     photo: Reparable,
+    name: "Réparable",
   },
   {
     id: 2,
     photo: Reconditionne,
+    name: "Reconditionné",
   },
   {
     id: 3,
     photo: TresBonEtat,
+    name: "Trés Bon Etat",
   },
 ];
 

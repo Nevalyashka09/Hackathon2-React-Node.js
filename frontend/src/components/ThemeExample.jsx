@@ -25,7 +25,7 @@ const steps = [
 function ThemedExample() {
   return (
     <ThemeProvider theme={theme}>
-      <Bot steps={steps} />;
+      <Bot steps={steps} />
     </ThemeProvider>
   );
 }
