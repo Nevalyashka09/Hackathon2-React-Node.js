@@ -1,20 +1,24 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "@mui/material/Button";
+import { Container } from "@mui/material";
+import LoginForm from "../components/LoginForm";
+import fullLogo from "../assets/Logo.svg";
 
-export default function Login() {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/home");
-  };
-
+function Login() {
   return (
-    <div>
-      <h1 className="text-red-700">Login Page</h1>
-      <Button variant="contained" onClick={handleClick}>
-        Vers Home
-      </Button>
+    <div className="h-screen flex">
+      <div className="w-7/12">
+        <Container className="h-screen bg-primary-800 flex flex-col justify-center">
+          <LoginForm className="flex justify-center items-center" />
+        </Container>
+      </div>
+
+      <div className="relative w-5/12 flex flex-col items-center">
+        <img className="w-64 drop-shadow-lg m-20" src={fullLogo} alt="logo" />
+        <div className="w-auto h-1/2 lg:h-2/3 absolute bottom-0 -left-8 lg:-left-20">
+          Ajouter une photo
+        </div>
+      </div>
     </div>
   );
 }
+
+export default Login;

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -9,7 +10,7 @@
 
 @layer base {
   html {
-    font-family: Roboto, system-ui, sans-serif;
+    font-family: Rubik, system-ui, sans-serif;
   }
 
   h1 {
