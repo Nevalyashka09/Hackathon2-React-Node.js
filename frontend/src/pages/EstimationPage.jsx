@@ -6,8 +6,9 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import ContentFonctionalite from "../components/ContentFonctionalite";
 
-export default function Home() {
+export default function EstimationPage() {
   return (
     <div>
       <AppProvider>
@@ -35,7 +36,7 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            Hello Bob
+            <ContentFonctionalite />
           </div>
           <img
             style={{
