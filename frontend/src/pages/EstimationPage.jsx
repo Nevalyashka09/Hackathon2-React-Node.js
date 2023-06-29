@@ -8,7 +8,7 @@ import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 
-export default function Home() {
+export default function EstimationPage() {
   const [brands, setBrands] = useState([]);
   const [models, setModels] = useState([]);
   const [storages, setStorage] = useState([]);
@@ -27,7 +27,7 @@ export default function Home() {
   const [selectedState, setSelectedState] = useState();
 
   const [estimatedPrice, setEstimatedPrice] = useState();
-  const saving = models.price - estimatedPrice;
+  const saving = estimatedPrice - models.price;
   const co2 = 200 + Math.random() * 100;
 
   useEffect(() => {
