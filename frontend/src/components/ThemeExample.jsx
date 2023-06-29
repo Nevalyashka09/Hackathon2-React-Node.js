@@ -4,14 +4,14 @@ import Bot from "./Bot";
 
 const theme = {
   background: "#f5f8fb",
-  fontFamily: "Helvetica Neue",
-  headerBgColor: "#EF6C00",
+  fontFamily: "Rubik",
+  headerBgColor: "#A5C444",
   headerFontColor: "#fff",
-  headerFontSize: "15px",
-  botBubbleColor: "#EF6C00",
+  headerFontSize: "20px",
+  botBubbleColor: "#A5C444",
   botFontColor: "#fff",
-  userBubbleColor: "#fff",
-  userFontColor: "#4a4a4a",
+  userBubbleColor: "#A5C444",
+  userFontColor: "#fff",
 };
 
 const steps = [

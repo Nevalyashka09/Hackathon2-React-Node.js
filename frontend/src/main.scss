@@ -33,13 +33,6 @@
     @apply text-zinc-500 text-lg py-2;
   }
 
-  @layer utilities{
-    .hvGjDQ{
-      height: calc(520px - 100px);
-      background-color: red;
-    }
-  }
-
   @variants responsive {
     .no-scrollbar::-webkit-scrollbar {
       display: none;

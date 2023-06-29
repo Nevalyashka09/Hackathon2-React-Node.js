@@ -21,9 +21,10 @@ export default function Bot() {
           }}
         />
         <ChatBot
-          headerTitle="Eric"
+          headerTitle=""
           botAvatar={eric}
           floating
+          placeholder="Votre message"
           steps={[
             {
               id: "1",
@@ -37,7 +38,8 @@ export default function Bot() {
             },
             {
               id: "3",
-              message: "Ah non, pour ça je n'ai aucune idée",
+              message:
+                "La RAM est une forme de mémoire utilisée par les telephones pour stocker temporairement les données en cours d'utilisation.",
               trigger: "4",
             },
             {
@@ -47,7 +49,7 @@ export default function Bot() {
             },
             {
               id: "5",
-              message: "Laisse-moi tranquille, je regarde le foot",
+              message: "Vous êtes les meilleurs.",
               end: true,
             },
           ]}
