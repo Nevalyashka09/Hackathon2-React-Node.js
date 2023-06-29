@@ -7,7 +7,7 @@ class SmartphoneManager extends AbstractManager {
 
   getSmartphones() {
     return this.database.query(
-      `SELECT * FROM smartphones INNER JOIN brand ON smartphones.brand_id = brand.id`
+      `SELECT * FROM smartphones INNER JOIN brands ON smartphones.brands_id = brands.brands_id`
     );
   }
 

@@ -39,6 +39,26 @@ const SmartphoneManager = require("./SmartphoneManager");
 models.smartphone = new SmartphoneManager();
 models.smartphone.setDatabase(pool);
 
+const BrandManager = require("./BrandManager");
+
+models.brand = new BrandManager();
+models.brand.setDatabase(pool);
+
+const StorageManager = require("./StorageManager");
+
+models.storage = new StorageManager();
+models.storage.setDatabase(pool);
+
+const RamManager = require("./RamManager");
+
+models.ram = new RamManager();
+models.ram.setDatabase(pool);
+
+const ModelManager = require("./ModelManager");
+
+models.model = new ModelManager();
+models.model.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
