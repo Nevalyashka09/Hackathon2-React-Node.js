@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "storage": 16
+  },
+  {
+    "id": 1,
+    "storage": 32
+  },
+  {
+    "id": 2,
+    "storage": 64
+  },
+  {
+    "id": 3,
+    "storage": 128
+  },
+  {
+    "id": 4,
+    "storage": 256
+  },
+  {
+    "id": 5,
+    "storage": 512
+  },
+  {
+    "id": 6,
+    "storage": 1024
+  }
+]
