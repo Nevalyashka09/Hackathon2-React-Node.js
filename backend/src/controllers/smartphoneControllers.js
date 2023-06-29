@@ -2,7 +2,7 @@ const models = require("../models");
 
 const getAllSmartphones = (req, res) => {
   models.smartphone
-    .findAll()
+    .getSmartphones()
     .then(([smartphone]) => {
       res.status(200).send(smartphone);
     })
