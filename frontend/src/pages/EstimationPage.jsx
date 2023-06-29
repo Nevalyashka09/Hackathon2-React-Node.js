@@ -1,5 +1,5 @@
 import "../main.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import AppContext from "../components/Context/AppContext";
 import ThemeExample from "../components/ThemeExample";
 import NavBar from "../components/NavBar";
@@ -16,7 +16,7 @@ export default function EstimationPage() {
     deviceStateCompleted,
     recapCompleted,
     seeEstimation,
-  } = AppContext();
+  } = useContext(AppContext);
 
   const [brands, setBrands] = useState([]);
   const [models, setModels] = useState([]);
