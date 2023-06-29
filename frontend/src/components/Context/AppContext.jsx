@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [timeline, setTimeline] = useState(4);
+  const [timeline, setTimeline] = useState(0);
 
   // Selections de l'utilisateur
   const [marque, setMarque] = useState();
@@ -84,6 +84,7 @@ export function AppProvider({ children }) {
   const contextValue = useMemo(
     () => ({
       timeline,
+      setTimeline,
       updateTimeline,
       marque,
       setMarque,

@@ -8,6 +8,7 @@ import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 import Etat from "../components/Etat";
+import CardLogo from "../components/CardLogo";
 
 export default function EstimationPage() {
   const {
@@ -74,7 +75,7 @@ export default function EstimationPage() {
           Estimer un prix
         </h3>
         <TimeLine />
-        <Title text="Fonctionnalité de l’appareil" />
+        <Title text="Quel est la marque du téléphone ?" />
         <div
           style={{
             marginTop: "50px",
@@ -83,7 +84,7 @@ export default function EstimationPage() {
             height: "360px",
           }}
         >
-          {timeline === 0 ? <p>Comp 0</p> : ""}
+          {timeline === 0 ? <CardLogo /> : ""}
           {timeline === 1 ? <p>Comp 1</p> : ""}
           {timeline === 2 ? <p>Comp 2</p> : ""}
           {timeline === 3 ? <p>Comp 3</p> : ""}

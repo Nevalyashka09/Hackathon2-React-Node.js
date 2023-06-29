@@ -70,12 +70,12 @@ VALUES
 
 INSERT INTO brands (name, imgUrl)
 VALUES
-    ('Apple', 'https://example.com/apple.svg'),
-    ('Samsung', 'https://example.com/samsung.svg'),
-    ('Sony', 'https://example.com/sony.svg'),
-    ('Huawei', 'https://example.com/huawei.svg'),
-    ('BlackBerry', 'https://example.com/blackberry.svg'),
-    ('LG', 'https://example.com/lg.svg');
+    ('Apple', 'https://svgshare.com/i/ukX.svg'),
+    ('Samsung', 'https://i.postimg.cc/ncKffVWJ/Samsung-Logo-650x366-removebg-preview.png'),
+    ('Sony', 'https://svgshare.com/i/ukv.svg'),
+    ('Huawei', 'https://svgshare.com/i/umq.svg'),
+    ('BlackBerry', 'https://i.postimg.cc/XJg90C95/Blackberry-Logo-650x366-removebg-preview.png'),
+    ('LG', 'https://i.postimg.cc/xdJsYtdz/LG-Logo-650x366-removebg-preview.png');
 
 INSERT INTO models (name, brands_id, price)
 VALUES
