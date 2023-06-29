@@ -97,8 +97,8 @@ function LoginForm() {
   return (
     <div className="flex justify-center">
       <Paper elevation={6} className="p-5 max-w-sm">
-        <h2 className="text-center">Se connecter</h2>
-        <p className="my-8 text-center">
+        <h2 className="text-center font-rubik">Se connecter</h2>
+        <p className="my-8 text-center font-rubik">
           Veuillez renseigner vos coordonnées de connexion.
         </p>
         <TextField
