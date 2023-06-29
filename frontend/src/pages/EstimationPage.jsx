@@ -30,6 +30,9 @@ export default function Home() {
               width: "650px",
               height: "360px",
               backgroundColor: "#FFD0D0",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             Hello Bob
