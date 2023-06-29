@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import AppContext from "./Context/AppContext";
 
 function Calculatrice() {
-  const { stockage, ram, etat, isBlocked } = useContext(AppContext);
+  const { stockage, ram, etat, isBlocked, selectedModel } =
+    useContext(AppContext);
 
   const Prixfinal = () => {
-    let totalPrice = 30;
+    let totalPrice = selectedModel.price;
 
     // Calcul en fonction de la RAM
     switch (ram) {
