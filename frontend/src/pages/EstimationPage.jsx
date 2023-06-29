@@ -9,7 +9,7 @@ import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 import Etat from "../components/Etat";
 
-export default function Home() {
+export default function EstimationPage() {
   const [brands, setBrands] = useState([]);
   const [models, setModels] = useState([]);
   const [storages, setStorage] = useState([]);

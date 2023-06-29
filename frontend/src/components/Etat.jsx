@@ -1,6 +1,7 @@
 import React from "react";
 import Loupe from "./Loupe";
 import data from "../BaseDeDonnées/Photo";
+import OverlayEtat from "../components/OverlayEtat";
 
 function Etat() {
   return (
@@ -36,7 +37,16 @@ function Etat() {
               fontWeight: "bold",
             }}
           >
-            {item.name}
+            <div>{item.name}</div>
+            <div
+              style={{
+                position: "absolute",
+                marginLeft: "10%",
+                marginTop: "0.8%",
+              }}
+            >
+              <OverlayEtat title={item.name} text={item.description} />
+            </div>
           </div>
         </div>
       ))}

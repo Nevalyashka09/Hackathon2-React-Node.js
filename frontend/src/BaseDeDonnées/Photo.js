@@ -8,21 +8,26 @@ const data = [
     id: 0,
     photo: Abime,
     name: "Abimé",
+    description:
+      "100% fonctionnel. Peut montrer des signes visibles d’usure, des rayures profondes et/ou de petits impacts.",
   },
   {
     id: 1,
     photo: Reparable,
     name: "Réparable",
+    description: "",
   },
   {
     id: 2,
     photo: Reconditionne,
     name: "Reconditionné",
+    description: "",
   },
   {
     id: 3,
     photo: TresBonEtat,
     name: "Trés Bon Etat",
+    description: "",
   },
 ];
 
