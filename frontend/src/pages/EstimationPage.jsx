@@ -69,6 +69,17 @@ export default function Home() {
           </h3>
           <TimeLine />
           <Title text="Fonctionnalité de l’appareil" />
+          <div
+            style={{
+              marginTop: "50px",
+              marginBottom: "50px",
+              width: "650px",
+              height: "360px",
+              backgroundColor: "#FFD0D0",
+            }}
+          >
+            Hello Bob
+          </div>
           <img
             style={{
               marginLeft: "10vw",
