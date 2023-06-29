@@ -18,7 +18,11 @@ function NavBar() {
           </div>
         </Typography>
         <div>
-          <Button style={{ color: "#CF2E79" }} component={Link} to="/estimate">
+          <Button
+            style={{ color: "#CF2E79" }}
+            component={Link}
+            to="/estimation"
+          >
             Estimer un prix
           </Button>
           <Button style={{ color: "#CF2E79" }} component={Link} to="/help">
