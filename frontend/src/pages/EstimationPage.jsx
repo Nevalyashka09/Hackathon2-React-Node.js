@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import ContentFonctionalite from "../components/ContentFonctionalite";
 
 export default function EstimationPage() {
   const {
