@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import Accessoire from "../components/Accessoire";
 
 export default function EstimationPage() {
   const {
@@ -29,8 +30,6 @@ export default function EstimationPage() {
     fetch("rams", setRams);
     fetch("models", setModels);
   }, []);
-
-  // pour information dans la console
 
   useEffect(() => {
     console.info("brands", brands);
@@ -68,10 +67,9 @@ export default function EstimationPage() {
             marginBottom: "50px",
             width: "650px",
             height: "360px",
-            backgroundColor: "#FFD0D0",
           }}
         >
-          Hello Bob
+          <Accessoire />
         </div>
         <img
           style={{

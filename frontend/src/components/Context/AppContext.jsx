@@ -5,10 +5,10 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [timeline, setTimeline] = useState(0);
-  const [marque, setMarque] = useState("");
+  const [marque, setMarque] = useState("Apple");
   const [model, setModel] = useState("");
-  const [stockage, setStockage] = useState(64);
-  const [ram, setRam] = useState(2);
+  const [stockage, setStockage] = useState();
+  const [ram, setRam] = useState();
   const [etat, setEtat] = useState("abimé");
   const [isBlocked, setIsBlocked] = useState(false);
   const [newPrice, setNewPrice] = useState(0);
