@@ -18,7 +18,7 @@ function CardImpactAppareils() {
         className={`p-5 flex flex-col justify-center items-center ${
           isBouncing ? "bounce" : ""
         }`}
-        style={{ borderRadius: "16px", height: "400px", width: "370px" }}
+        style={{ borderRadius: "16px", height: "350px", width: "370px" }}
       >
         <div className="flex flex-col justify-center items-center">
           <Typography variant="h1" className="text-primary-50">

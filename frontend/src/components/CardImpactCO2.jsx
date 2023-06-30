@@ -2,7 +2,7 @@ import { Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Tree from "../assets/Tree.png";
 
-function CardImpactAppareils() {
+function CardImpactCO2() {
   const [isBouncing, setIsBouncing] = useState(false);
 
   useEffect(() => {
@@ -12,15 +12,15 @@ function CardImpactAppareils() {
   }, []);
 
   return (
-    <div className="w-56">
+    <div>
       <Paper
         elevation={6}
-        className={`p-5 flex flex-col justify-center items-center -z-20${
+        className={`p-5 flex flex-col justify-center items-center ${
           isBouncing ? "bounce" : ""
         }`}
-        style={{ borderRadius: "16px", height: "400px", width: "370px" }}
+        style={{ borderRadius: "16px", height: "350px", width: "370px" }}
       >
-        <div className="flex flex-col justify-center items-center z-10">
+        <div className="flex flex-col justify-center items-center">
           <Typography variant="h1" className="text-primary-100">
             <strong>5 345</strong>
           </Typography>
@@ -56,4 +56,4 @@ function CardImpactAppareils() {
   );
 }
 
-export default CardImpactAppareils;
+export default CardImpactCO2;

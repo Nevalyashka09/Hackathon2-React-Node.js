@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ThemedExample from "../components/ThemeExample";
-import CardImpactAppareils from "../components/CardImpact";
+import CardImpactAppareils from "../components/CardImpactAppareils";
 import CardImpactCO2 from "../components/CardImpactCO2";
 import Slogan from "../assets/Slogan.png";
 import Hand from "../assets/Hand.svg";
@@ -22,7 +22,7 @@ export default function Home() {
                 Bonjour, <br /> Team Bordeaux
               </h1>
 
-              <h3 className="mt-20 mb-12">Votre impact</h3>
+              <h3 className="mt-12 mb-10">Votre impact</h3>
               <div className="flex gap-28">
                 <CardImpactAppareils />
                 <CardImpactCO2 />
