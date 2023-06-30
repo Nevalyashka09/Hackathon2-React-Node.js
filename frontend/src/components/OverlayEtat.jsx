@@ -22,7 +22,7 @@ function OverlayEtat({ title, text }) {
   };
 
   return (
-    <div className="flex justify-end pb-4">
+    <div className="flex justify-center">
       <Button variant="text" onClick={handleClickOpen}>
         <img src={Info} alt="info" />
       </Button>

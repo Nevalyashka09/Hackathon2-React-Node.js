@@ -22,11 +22,6 @@ function Etat() {
         >
           <Loupe id={item.id} image={item.photo} />
           <div
-            type="button"
-            onClick={() => {
-              setEtat(item.name);
-              updateTimeline(4);
-            }}
             style={{
               borderRadius: "0 0 30px 30px ",
               height: "50px",
@@ -44,9 +39,13 @@ function Etat() {
                 marginLeft: "10%",
                 marginTop: "0.8%",
               }}
-            >
-              <OverlayEtat title={item.name} text={item.description} />
-            </div>
+            />
+            <OverlayEtat
+              title={item.name}
+              text={item.description}
+              setEtat={setEtat}
+              updateTimeline={updateTimeline}
+            />
           </div>
         </div>
       ))}
