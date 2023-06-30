@@ -6,7 +6,7 @@ function CardLogo() {
 
   const handleCardClick = (name) => {
     setMarque(name);
-    setTimeline(1);
+    setTimeline(2);
     console.log(name);
     console.log(Timeline);
   };

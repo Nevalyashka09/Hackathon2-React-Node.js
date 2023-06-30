@@ -10,6 +10,7 @@ import Title from "../components/Title";
 import Etat from "../components/Etat";
 import ContentFonctionalite from "../components/ContentFonctionalite";
 import ContentRecap from "../components/ContentRecap";
+import CardLogo from "../components/CardLogo";
 
 export default function EstimationPage() {
   const {
@@ -86,7 +87,7 @@ export default function EstimationPage() {
           }}
         >
           {timeline === 0 ? <ContentFonctionalite /> : ""}
-          {timeline === 1 ? <p>brand</p> : ""}
+          {timeline === 1 ? <CardLogo /> : ""}
           {timeline === 2 ? <p>données</p> : ""}
           {timeline === 3 ? <p>Accessoiers</p> : ""}
           {timeline === 4 ? <Etat /> : ""}
