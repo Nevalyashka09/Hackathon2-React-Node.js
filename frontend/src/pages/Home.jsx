@@ -5,25 +5,32 @@ import Footer from "../components/Footer";
 import ThemedExample from "../components/ThemeExample";
 import CardImpactAppareils from "../components/CardImpact";
 import CardImpactCO2 from "../components/CardImpactCO2";
+import Slogan from "../assets/Slogan.png";
+import Hand from "../assets/Hand.svg";
 
 export default function Home() {
   return (
     <div>
-      <h1>Test</h1>
       <NavBar />
       <ThemedExample />
       <div className="flex">
-        <div className="w-7/12">
+        <img src={Slogan} alt="slogan" className="absolute ml-48" />
+        <div className="w-6/12">
           <Container className="h-screen mt-1 bg-primary-800 flex flex-col">
-            <h1 className="m-10">
-              Hello <br /> Team Bordeaux,
-            </h1>
-            <div className="flex gap-10">
-              <CardImpactAppareils />
-              <CardImpactCO2 />
+            <div className="mx-28 mt-10">
+              <h1 className="mt-36">
+                Bonjour, <br /> Team Bordeaux
+              </h1>
+
+              <h3 className="mt-20 mb-12">Votre impact</h3>
+              <div className="flex gap-28">
+                <CardImpactAppareils />
+                <CardImpactCO2 />
+              </div>
             </div>
           </Container>
         </div>
+        <img src={Hand} alt="main" className="fixed bottom-0 left-2/3" />
       </div>
       <Footer />
     </div>
