@@ -14,6 +14,7 @@ import ContentFonctionalite from "../components/ContentFonctionalite";
 import ContentRecap from "../components/ContentRecap";
 import CardLogo from "../components/CardLogo";
 import Models from "../components/Models";
+import Price from "../components/Price";
 
 export default function EstimationPage() {
   const {
@@ -94,7 +95,7 @@ export default function EstimationPage() {
           {timeline === 2 ? <Models /> : ""}
           {timeline === 3 ? <Etat /> : ""}
           {timeline === 4 ? <ContentRecap /> : ""}
-          {timeline === 5 ? <p>Price</p> : ""}
+          {timeline === 5 ? <Price /> : ""}
         </div>
         <img
           style={{
