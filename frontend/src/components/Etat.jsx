@@ -6,9 +6,6 @@ import AppContext from "./Context/AppContext";
 
 function Etat() {
   const { setEtat, updateTimeline } = useContext(AppContext);
-  const handleOverlayClick = (event) => {
-    event.stopPropagation();
-  };
 
   return (
     <div className="flex w-[700px] flex-wrap gap-10">
@@ -25,10 +22,13 @@ function Etat() {
         >
           <Loupe id={item.id} image={item.photo} />
           <div
-            type="button"
-            onClick={() => {
-              setEtat(item.name);
-              updateTimeline(4);
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setEtat(item.name);
+                updateTimeline(4);
+              }
             }}
             style={{
               borderRadius: "0 0 30px 30px ",
@@ -40,19 +40,33 @@ function Etat() {
               fontWeight: "bold",
             }}
           >
-            <div>{item.name}</div>
             <div
-              className="z-100"
+              key={item.name}
+              role="button"
+              className="cursor-pointer"
+              onClick={() => {
+                setEtat(item.name);
+                updateTimeline(4);
+              }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setEtat(item.name);
+                  updateTimeline(4);
+                }
+              }}
+            >
+              {item.name}
+            </div>
+            <div
               style={{
                 position: "absolute",
                 marginLeft: "10%",
-                marginTop: "0.8%",
               }}
             >
               <OverlayEtat
+                className="z-100"
                 title={item.name}
                 text={item.description}
-                onClick={handleOverlayClick}
               />
             </div>
           </div>
