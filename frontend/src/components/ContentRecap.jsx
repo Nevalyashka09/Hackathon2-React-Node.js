@@ -13,15 +13,11 @@ import ModifierButton from "./ModifierButton";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
 function ContentRecap() {
-  const { model, stockage, etat, chargerDeviceWorks, updateTimeline } =
+  const { model, stockage, etat, ram, updateTimeline, isBlocked } =
     useContext(AppContext);
   console.info("model est", model);
   const handleClick = () => {
-    updateTimeline(6);
-  };
-
-  const handleClickData = () => {
-    updateTimeline(2);
+    updateTimeline(5);
   };
 
   return (
@@ -40,7 +36,7 @@ function ContentRecap() {
               <button
                 type="button"
                 className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
-                onClick={() => updateTimeline(1)}
+                onClick={() => updateTimeline(2)}
               >
                 <PencilSquareIcon className="text-white h-6 w-6" />
               </button>
@@ -65,21 +61,14 @@ function ContentRecap() {
               </button>
             </div>
           </ListItem>
-          {/* Accessoires */}
+
           <ListItem button>
             <ListItemText
-              secondary={
-                <Typography variant="subtitle1">Accessoires fournis</Typography>
-              }
+              secondary={<Typography variant="subtitle1">RAM</Typography>}
             />
             <div className="flex gap-10">
               <ListItemText
-                primary={
-                  <Typography variant="h6">
-                    Chargeur :
-                    {chargerDeviceWorks ? <span> Oui</span> : <span> Non</span>}
-                  </Typography>
-                }
+                primary={<Typography variant="h6">{ram}</Typography>}
               />
               <button
                 type="button"
@@ -102,7 +91,32 @@ function ContentRecap() {
               <button
                 type="button"
                 className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
-                onClick={() => updateTimeline(4)}
+                onClick={() => updateTimeline(3)}
+              >
+                <PencilSquareIcon className="text-white h-6 w-6" />
+              </button>
+            </div>
+          </ListItem>
+          <ListItem button>
+            <ListItemText
+              secondary={
+                <Typography variant="subtitle1">
+                  Bloqué sur un opérateur
+                </Typography>
+              }
+            />
+            <div className="flex gap-10">
+              <ListItemText
+                primary={
+                  <Typography variant="h6">
+                    {isBlocked ? <span>Oui</span> : <span>Non</span>}
+                  </Typography>
+                }
+              />
+              <button
+                type="button"
+                className="rounded-full w-10 h-10 bg-secondary-600 border-none cursor-pointer"
+                onClick={() => updateTimeline(0)}
               >
                 <PencilSquareIcon className="text-white h-6 w-6" />
               </button>

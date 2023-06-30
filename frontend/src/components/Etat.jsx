@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Loupe from "./Loupe";
 import data from "../BaseDeDonnées/Photo";
 import OverlayEtat from "./OverlayEtat";
+import AppContext from "./Context/AppContext";
 
 function Etat() {
+  const { setEtat, updateTimeline } = useContext(AppContext);
+
   return (
     <div
       style={{
@@ -27,6 +30,11 @@ function Etat() {
         >
           <Loupe id={item.id} image={item.photo} />
           <div
+            type="button"
+            onClick={() => {
+              setEtat(item.name);
+              updateTimeline(4);
+            }}
             style={{
               borderRadius: "0 0 30px 30px ",
               height: "50px",

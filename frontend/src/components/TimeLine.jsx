@@ -12,7 +12,6 @@ export default function StepperComponent() {
     "Fonctionnalités",
     "Marque",
     "Données",
-    "Accessoires",
     "État",
     "Récapitulatif",
     "Prix",
