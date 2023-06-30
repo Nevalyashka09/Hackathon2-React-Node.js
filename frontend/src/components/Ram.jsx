@@ -8,7 +8,7 @@ function RamAccordion() {
   const { ram, setRam } = useContext(AppContext);
   console.info("valeur de ram", ram);
   return (
-    <div>
+    <div className="flex gap-2">
       {Ram.map((ramItem) => (
         <Button
           key={ramItem.id}

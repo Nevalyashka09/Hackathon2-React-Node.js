@@ -17,56 +17,21 @@ import Models from "../components/Models";
 import Price from "../components/Price";
 
 export default function EstimationPage() {
-  const {
-    timeline,
-    setTimeline,
-    // minimalConditions,
-    // deviceBrandCompleted,
-    // deviceInfoCompleted,
-    // deviceStateCompleted,
-    // recapCompleted,
-  } = useContext(AppContext);
-
-  const [initialLoading, setInitialLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setInitialLoading(true);
-  //   console.info("initialoading is", initialLoading);
-
-  //   if (initialLoading === true) {
-  //     if (minimalConditions) {
-  //       setTimeline((prevTimeline) => prevTimeline + 1);
-  //     } else {
-  //       setTimeline((prevTimeline) => prevTimeline - 1);
-  //     }
-  //     if (deviceBrandCompleted) {
-  //       setTimeline((prevTimeline) => prevTimeline + 1);
-  //     } else {
-  //       setTimeline((prevTimeline) => prevTimeline - 1);
-  //     }
-  //     if (deviceInfoCompleted) {
-  //       setTimeline((prevTimeline) => prevTimeline + 1);
-  //     } else {
-  //       setTimeline((prevTimeline) => prevTimeline - 1);
-  //     }
-  //     if (deviceStateCompleted) {
-  //       setTimeline((prevTimeline) => prevTimeline + 1);
-  //     } else {
-  //       setTimeline((prevTimeline) => prevTimeline - 1);
-  //     }
-  //     if (recapCompleted) {
-  //       setTimeline((prevTimeline) => prevTimeline + 1);
-  //     } else {
-  //       setTimeline((prevTimeline) => prevTimeline - 1);
-  //     }
-  //   }
-  // }, [
-  //   minimalConditions,
-  //   deviceBrandCompleted,
-  //   deviceInfoCompleted,
-  //   deviceStateCompleted,
-  //   recapCompleted,
-  // ]);
+  const { timeline, setTimeline } = useContext(AppContext);
+  let titleText = "";
+  if (timeline === 0) {
+    titleText = "Quelles sont les fonctionnalités du téléphone ?";
+  } else if (timeline === 1) {
+    titleText = "Quelle est la marque du téléphone ?";
+  } else if (timeline === 2) {
+    titleText = "Quel est le modèle du téléphone ?";
+  } else if (timeline === 3) {
+    titleText = "Quel est l'état du téléphone ?";
+  } else if (timeline === 4) {
+    titleText = "Récapitulatif des informations du téléphone";
+  } else if (timeline === 5) {
+    titleText = "Voir l'estimation du téléphone";
+  }
 
   return (
     <div>
@@ -81,7 +46,7 @@ export default function EstimationPage() {
           Estimer un prix
         </h3>
         <TimeLine />
-        <Title text="Quel est la marque du téléphone ?" />
+        <Title text={titleText} />
         <div
           style={{
             marginTop: "50px",
@@ -112,7 +77,8 @@ export default function EstimationPage() {
       <div
         style={{
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
+          width: "100%",
           position: "absolute",
           zIndex: "-1",
           top: "0",
