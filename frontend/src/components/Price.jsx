@@ -5,9 +5,11 @@ import Calculatrice from "./Calculatrice";
 import AppContext from "./Context/AppContext";
 
 function Price() {
+  const { updateTimeline, co2 } = useContext(AppContext);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/home");
+    updateTimeline(0);
   };
   const randomNumber = Math.floor(Math.random() * (200 - 100 + 1)) + 100;
   return (
@@ -20,8 +22,11 @@ function Price() {
           {randomNumber} €
         </Typography>
         <div className="flex flex-col gap-3 justify-center items-center">
-          <Typography variant="h5">212 € économisés / achat neuf</Typography>
-          <Typography variant="h5">236 Ko de Co2 non rejetés</Typography>
+          <Typography variant="h5">
+            {randomNumber * Math.round(Math.floor(Math.random() * 2 + 3))} €
+            économisés / achat neuf
+          </Typography>
+          <Typography variant="h5">{co2} Ko de Co2 non rejetés</Typography>
         </div>{" "}
         <div className="w-full flex justify-center">
           <Button

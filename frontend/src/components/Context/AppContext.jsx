@@ -31,7 +31,7 @@ export function AppProvider({ children }) {
   const [storages, setStorages] = useState([]);
   const [rams, setRams] = useState([]);
 
-  const co2 = 200 + Math.random() * 100;
+  const co2 = Math.floor(200 + Math.random() * 100);
 
   // Conditions qui vérifient si les valeurs sont bien sélectionnées.
 

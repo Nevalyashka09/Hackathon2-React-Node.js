@@ -6,6 +6,9 @@ import AppContext from "./Context/AppContext";
 
 function Etat() {
   const { setEtat, updateTimeline } = useContext(AppContext);
+  const handleOverlayClick = (event) => {
+    event.stopPropagation();
+  };
 
   return (
     <div className="flex w-[700px] flex-wrap gap-10">
@@ -39,13 +42,18 @@ function Etat() {
           >
             <div>{item.name}</div>
             <div
+              className="z-100"
               style={{
                 position: "absolute",
                 marginLeft: "10%",
                 marginTop: "0.8%",
               }}
             >
-              <OverlayEtat title={item.name} text={item.description} />
+              <OverlayEtat
+                title={item.name}
+                text={item.description}
+                onClick={handleOverlayClick}
+              />
             </div>
           </div>
         </div>

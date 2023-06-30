@@ -51,13 +51,6 @@ export default function StickyFooter() {
             >
               FAQ
             </Button>
-            <Button
-              style={{ color: "#EBEBEB", fontWeight: "bold" }}
-              component={Link}
-              to="/???"
-            >
-              ???
-            </Button>
           </div>
           <Copyright />
         </Container>
