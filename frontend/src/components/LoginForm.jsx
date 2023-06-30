@@ -93,10 +93,7 @@ function LoginForm() {
     if (mail === "" || password === "") {
       setAlertMessage("Veuillez remplir tous les champs !");
       setShowAlert(true);
-    } else if (
-      mail === "utilisateur1@example.com" &&
-      password === "motdepasse1"
-    ) {
+    } else if (mail === "pcbordeaux@emmaus.com" && password === "motdepasse") {
       navigate("/home");
     } else {
       setAlertMessage("Addresse mail ou mot de passe incorrects !");
