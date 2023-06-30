@@ -178,6 +178,7 @@ function LoginForm() {
         </Button>
       </Paper>
       <Snackbar
+        style={{ marginTop: "50px" }}
         open={showAlert}
         autoHideDuration={3000}
         onClose={handleCloseAlert}

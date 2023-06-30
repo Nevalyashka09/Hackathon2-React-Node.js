@@ -7,29 +7,25 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
-import Accessoire from "../components/Accessoire";
 
 export default function EstimationPage() {
   const {
-    minimalConditions,
-    deviceBrandCompleted,
-    deviceInfoCompleted,
-    deviceStateCompleted,
-    recapCompleted,
-    seeEstimation,
+    timeline,
+    setTimeline,
+    // minimalConditions,
+    // deviceBrandCompleted,
+    // deviceInfoCompleted,
+    // deviceStateCompleted,
+    // recapCompleted,
   } = useContext(AppContext);
 
-  const [brands, setBrands] = useState([]);
-  const [models, setModels] = useState([]);
-  const [storages, setStorage] = useState([]);
-  const [rams, setRams] = useState([]);
+  const [initialLoading, setInitialLoading] = useState(false);
 
-  useEffect(() => {
-    fetch("brands", setBrands);
-    fetch("storages", setStorage);
-    fetch("rams", setRams);
-    fetch("models", setModels);
-  }, []);
+  // useEffect(() => {
+  //   setInitialLoading(true);
+  //   console.info("initialoading is", initialLoading);
+
+  // pour information dans la console
 
   useEffect(() => {
     console.info("brands", brands);
@@ -60,7 +56,7 @@ export default function EstimationPage() {
           Estimer un prix
         </h3>
         <TimeLine />
-        <Title text="Fonctionnalité de l’appareil" />
+        <Title text="Quel est la marque du téléphone ?" />
         <div
           style={{
             marginTop: "50px",
@@ -69,7 +65,7 @@ export default function EstimationPage() {
             height: "360px",
           }}
         >
-          <Accessoire />
+          Hello Bob
         </div>
         <img
           style={{
@@ -89,29 +85,3 @@ export default function EstimationPage() {
     </div>
   );
 }
-
-// RENDU CONDITIONNEL DE TEST pour les futurs composants
-
-// {
-//   minimalConditions !== undefined && !minimalConditions && <Modal />;
-// }
-
-// {
-//   minimalConditions !== undefined && minimalConditions && <Brand />;
-// }
-
-// {
-//   deviceBrandCompleted && <Infos />;
-// }
-
-// {
-//   deviceInfoCompleted && <State />;
-// }
-
-// {
-//   deviceStateCompleted && <Recap />;
-// }
-
-// {
-//   recapCompleted && <Price />;
-// }

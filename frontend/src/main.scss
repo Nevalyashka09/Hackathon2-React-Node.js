@@ -30,7 +30,7 @@
   }
 
   h5 {
-    @apply font-rubik text-black text-lg py-2;
+    @apply font-rubik text-black text-lg;
   }
 
   @variants responsive {
@@ -43,6 +43,22 @@
       scrollbar-width: none;
     }
   }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation: bounce 0.5s ease-in-out infinite;
 }
 
 #scrollbar {
