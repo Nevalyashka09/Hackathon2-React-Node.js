@@ -12,7 +12,6 @@ import RamAccordion from "./Ram";
 function CardLogo() {
   const { marqueId, updateTimeline, model, setModel } = useContext(AppContext);
   const [dataSmartphone, setDataSmartphone] = useState([]);
-  const [selectedMode, setSelectedMode] = useState("");
 
   useEffect(() => {
     axios

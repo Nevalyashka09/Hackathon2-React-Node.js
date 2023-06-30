@@ -5,7 +5,6 @@ import Calculatrice from "./Calculatrice";
 import AppContext from "./Context/AppContext";
 
 function Price() {
-  const { NewPrice } = useContext(AppContext);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/home");
