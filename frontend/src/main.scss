@@ -10,27 +10,27 @@
 
 @layer base {
   html {
-    font-family: Rubik, system-ui, sans-serif;
+    font-family: rubik, sans-serif;
   }
 
   h1 {
-    @apply text-zinc-500 text-4xl py-4;
+    @apply font-rubik text-black text-4xl py-4;
   }
 
   h2 {
-    @apply text-zinc-500 text-3xl py-2;
+    @apply font-rubik text-black text-3xl py-2;
   }
 
   h3 {
-    @apply text-zinc-500 text-2xl py-2;
+    @apply font-rubik text-black text-2xl py-2;
   }
 
   h4 {
-    @apply text-zinc-500 text-xl py-2;
+    @apply font-rubik text-black text-xl py-2;
   }
 
   h5 {
-    @apply text-zinc-500 text-lg py-2;
+    @apply font-rubik text-black text-lg;
   }
 
   @variants responsive {
@@ -43,6 +43,22 @@
       scrollbar-width: none;
     }
   }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation: bounce 0.5s ease-in-out infinite;
 }
 
 #scrollbar {

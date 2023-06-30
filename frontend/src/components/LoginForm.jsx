@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import {
   Paper,
   TextField,
@@ -45,45 +45,62 @@ function LoginForm() {
     e.preventDefault();
   };
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // Check if all fields are filled out
+  //   if (mail === "" || password === "") {
+  //     setAlertMessage("Veuillez remplir tous les champs !");
+  //     setShowAlert(true);
+  //   } else {
+  //     try {
+  //       // Make the HTTP request to backend API
+  //       const response = await axios.post(
+  //         "http://localhost:6001/api/users/login",
+  //         { mail, password }
+  //       );
+  //       console.info(response.data);
+  //       navigate("/");
+  //     } catch (error) {
+  //       if (error.response) {
+  //         const { status } = error.response;
+  //         if (status === 401) {
+  //           setAlertMessage("Adresse mail ou mot de passe incorrects.");
+  //           setShowAlert(true);
+  //         } else if (status === 404) {
+  //           setAlertMessage(
+  //             "Utilisateur pas trouvé. Veuillez contacter votre administrateur."
+  //           );
+  //           setShowAlert(true);
+  //         } else {
+  //           setAlertMessage(
+  //             "Erreur interne du serveur. Veuillez réessayer ultérieurement."
+  //           );
+  //           setShowAlert(true);
+  //         }
+  //       } else {
+  //         setAlertMessage(
+  //           "Erreur de réseau. Veuillez réessayer ultérieurement."
+  //         );
+  //         setShowAlert(true);
+  //       }
+  //     }
+  //   }
+  // };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Check if all fields are filled out
     if (mail === "" || password === "") {
       setAlertMessage("Veuillez remplir tous les champs !");
       setShowAlert(true);
+    } else if (
+      mail === "utilisateur1@example.com" &&
+      password === "motdepasse1"
+    ) {
+      navigate("/home");
     } else {
-      try {
-        // Make the HTTP request to backend API
-        const response = await axios.post(
-          "http://localhost:6001/api/users/login",
-          { mail, password }
-        );
-        console.info(response.data);
-        navigate("/");
-      } catch (error) {
-        if (error.response) {
-          const { status } = error.response;
-          if (status === 401) {
-            setAlertMessage("Adresse mail ou mot de passe incorrects.");
-            setShowAlert(true);
-          } else if (status === 404) {
-            setAlertMessage(
-              "Utilisateur pas trouvé. Veuillez contacter votre administrateur."
-            );
-            setShowAlert(true);
-          } else {
-            setAlertMessage(
-              "Erreur interne du serveur. Veuillez réessayer ultérieurement."
-            );
-            setShowAlert(true);
-          }
-        } else {
-          setAlertMessage(
-            "Erreur de réseau. Veuillez réessayer ultérieurement."
-          );
-          setShowAlert(true);
-        }
-      }
+      setAlertMessage("Addresse mail ou mot de passe incorrects !");
+      setShowAlert(true);
     }
   };
 
@@ -161,6 +178,7 @@ function LoginForm() {
         </Button>
       </Paper>
       <Snackbar
+        style={{ marginTop: "50px" }}
         open={showAlert}
         autoHideDuration={3000}
         onClose={handleCloseAlert}

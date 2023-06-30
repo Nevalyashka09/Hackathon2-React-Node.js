@@ -5,19 +5,21 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import AppContext from "./Context/AppContext";
 
-const steps = [
-  "Appareil",
-  "Fonctionnalités",
-  "Accessoires",
-  "État",
-  "Récapitulatif",
-];
-
 export default function StepperComponent() {
   const { timeline } = useContext(AppContext);
 
+  const steps = [
+    "Fonctionnalités",
+    "Marque",
+    "Données",
+    "Accessoires",
+    "État",
+    "Récapitulatif",
+    "Prix",
+  ];
+
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box className="mt-8" sx={{ width: "100%" }}>
       <Stepper activeStep={timeline} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>

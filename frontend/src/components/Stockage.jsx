@@ -8,7 +8,14 @@ function StorageAccordion() {
   const { stockage, setStockage } = useContext(AppContext);
   console.info(stockage);
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "white",
+        display: "flex",
+        gap: "10px",
+        width: "628px",
+      }}
+    >
       {storageData.map((storageItem) => (
         <Button
           key={storageItem.id}

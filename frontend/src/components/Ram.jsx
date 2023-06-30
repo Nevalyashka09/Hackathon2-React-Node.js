@@ -8,7 +8,14 @@ function RamAccordion() {
   const { ram, setRam } = useContext(AppContext);
   console.info(ram);
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "white",
+        display: "flex",
+        gap: "10px",
+        width: "528px",
+      }}
+    >
       {Ram.map((ramItem) => (
         <Button
           key={ramItem.id}

@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import Bot from "./bot";
+import Bot from "./Bot";
 
 const theme = {
   background: "#f5f8fb",
@@ -25,7 +25,7 @@ const steps = [
 function ThemedExample() {
   return (
     <ThemeProvider theme={theme}>
-      <Bot steps={steps} />;
+      <Bot steps={steps} />
     </ThemeProvider>
   );
 }
