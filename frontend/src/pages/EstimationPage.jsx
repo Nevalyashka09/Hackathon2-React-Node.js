@@ -8,59 +8,60 @@ import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 import Etat from "../components/Etat";
-import CardLogo from "../components/CardLogo";
+import ContentFonctionalite from "../components/ContentFonctionalite";
+import ContentRecap from "../components/ContentRecap";
 
 export default function EstimationPage() {
   const {
     timeline,
     setTimeline,
-    minimalConditions,
-    deviceBrandCompleted,
-    deviceInfoCompleted,
-    deviceStateCompleted,
-    recapCompleted,
+    // minimalConditions,
+    // deviceBrandCompleted,
+    // deviceInfoCompleted,
+    // deviceStateCompleted,
+    // recapCompleted,
   } = useContext(AppContext);
 
   const [initialLoading, setInitialLoading] = useState(false);
 
-  useEffect(() => {
-    setInitialLoading(true);
-    console.info("initialoading is", initialLoading);
+  // useEffect(() => {
+  //   setInitialLoading(true);
+  //   console.info("initialoading is", initialLoading);
 
-    if (initialLoading === true) {
-      if (minimalConditions) {
-        setTimeline((prevTimeline) => prevTimeline + 1);
-      } else {
-        setTimeline((prevTimeline) => prevTimeline - 1);
-      }
-      if (deviceBrandCompleted) {
-        setTimeline((prevTimeline) => prevTimeline + 1);
-      } else {
-        setTimeline((prevTimeline) => prevTimeline - 1);
-      }
-      if (deviceInfoCompleted) {
-        setTimeline((prevTimeline) => prevTimeline + 1);
-      } else {
-        setTimeline((prevTimeline) => prevTimeline - 1);
-      }
-      if (deviceStateCompleted) {
-        setTimeline((prevTimeline) => prevTimeline + 1);
-      } else {
-        setTimeline((prevTimeline) => prevTimeline - 1);
-      }
-      if (recapCompleted) {
-        setTimeline((prevTimeline) => prevTimeline + 1);
-      } else {
-        setTimeline((prevTimeline) => prevTimeline - 1);
-      }
-    }
-  }, [
-    minimalConditions,
-    deviceBrandCompleted,
-    deviceInfoCompleted,
-    deviceStateCompleted,
-    recapCompleted,
-  ]);
+  //   if (initialLoading === true) {
+  //     if (minimalConditions) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (deviceBrandCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (deviceInfoCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (deviceStateCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (recapCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //   }
+  // }, [
+  //   minimalConditions,
+  //   deviceBrandCompleted,
+  //   deviceInfoCompleted,
+  //   deviceStateCompleted,
+  //   recapCompleted,
+  // ]);
 
   return (
     <div>
@@ -84,12 +85,13 @@ export default function EstimationPage() {
             height: "360px",
           }}
         >
-          {timeline === 0 ? <CardLogo /> : ""}
-          {timeline === 1 ? <p>Comp 1</p> : ""}
-          {timeline === 2 ? <p>Comp 2</p> : ""}
-          {timeline === 3 ? <p>Comp 3</p> : ""}
+          {timeline === 0 ? <ContentFonctionalite /> : ""}
+          {timeline === 1 ? <p>brand</p> : ""}
+          {timeline === 2 ? <p>données</p> : ""}
+          {timeline === 3 ? <p>Accessoiers</p> : ""}
           {timeline === 4 ? <Etat /> : ""}
-          {timeline === 5 ? <p>Comp 5</p> : ""}
+          {timeline === 5 ? <ContentRecap /> : ""}
+          {timeline === 6 ? <p>Price</p> : ""}
         </div>
         <img
           style={{

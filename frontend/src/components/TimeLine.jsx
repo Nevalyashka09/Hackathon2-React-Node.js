@@ -9,11 +9,13 @@ export default function StepperComponent() {
   const { timeline } = useContext(AppContext);
 
   const steps = [
-    "Appareil",
     "Fonctionnalités",
+    "Marque",
+    "Données",
     "Accessoires",
     "État",
     "Récapitulatif",
+    "Prix",
   ];
 
   return (
