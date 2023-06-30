@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import TimeLine from "../components/TimeLine";
 import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
+import boy from "../assets/images/boy.png";
+import girl from "../assets/images/girl.png";
 import Etat from "../components/Etat";
 import ContentFonctionalite from "../components/ContentFonctionalite";
 import ContentRecap from "../components/ContentRecap";
@@ -105,9 +107,37 @@ export default function EstimationPage() {
           alt=""
         />
       </div>
-
-      <ThemeExample />
-      <Footer />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          position: "absolute",
+          zIndex: "2",
+          top: "0",
+          bottom: "0",
+          marginTop: "320px",
+        }}
+      >
+        <img
+          style={{
+            height: "500px",
+            marginRight: "900px",
+            marginLeft: "50px",
+          }}
+          src={boy}
+          alt=""
+        />
+        <img
+          style={{
+            height: "450px",
+            marginTop: "50px",
+          }}
+          src={girl}
+          alt=""
+        />
+        <ThemeExample />
+        <Footer />
+      </div>
     </div>
   );
 }
