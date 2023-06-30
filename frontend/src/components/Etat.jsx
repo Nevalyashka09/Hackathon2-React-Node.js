@@ -33,7 +33,7 @@ function Etat() {
             type="button"
             onClick={() => {
               setEtat(item.name);
-              updateTimeline(5);
+              updateTimeline(4);
             }}
             style={{
               borderRadius: "0 0 30px 30px ",

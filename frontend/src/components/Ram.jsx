@@ -6,7 +6,7 @@ import Ram from "../BaseDeDonnées/Ram.json";
 
 function RamAccordion() {
   const { ram, setRam } = useContext(AppContext);
-  console.info(ram);
+  console.info("valeur de ram", ram);
   return (
     <div>
       {Ram.map((ramItem) => (

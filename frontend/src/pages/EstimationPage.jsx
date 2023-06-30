@@ -13,6 +13,7 @@ import Etat from "../components/Etat";
 import ContentFonctionalite from "../components/ContentFonctionalite";
 import ContentRecap from "../components/ContentRecap";
 import CardLogo from "../components/CardLogo";
+import Models from "../components/Models";
 
 export default function EstimationPage() {
   const {
@@ -90,11 +91,10 @@ export default function EstimationPage() {
         >
           {timeline === 0 ? <ContentFonctionalite /> : ""}
           {timeline === 1 ? <CardLogo /> : ""}
-          {timeline === 2 ? <p>données</p> : ""}
-          {timeline === 3 ? <p>Accessoiers</p> : ""}
-          {timeline === 4 ? <Etat /> : ""}
-          {timeline === 5 ? <ContentRecap /> : ""}
-          {timeline === 6 ? <p>Price</p> : ""}
+          {timeline === 2 ? <Models /> : ""}
+          {timeline === 3 ? <Etat /> : ""}
+          {timeline === 4 ? <ContentRecap /> : ""}
+          {timeline === 5 ? <p>Price</p> : ""}
         </div>
         <img
           style={{
@@ -113,7 +113,7 @@ export default function EstimationPage() {
           display: "flex",
           justifyContent: "flex-end",
           position: "absolute",
-          zIndex: "2",
+          zIndex: "-1",
           top: "0",
           bottom: "0",
           marginTop: "320px",

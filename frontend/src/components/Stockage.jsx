@@ -6,7 +6,7 @@ import storageData from "../BaseDeDonnées/Stockage.json";
 
 function StorageAccordion() {
   const { stockage, setStockage } = useContext(AppContext);
-  console.info(stockage);
+  console.info("Valeur du stockage", stockage);
   return (
     <div>
       {storageData.map((storageItem) => (

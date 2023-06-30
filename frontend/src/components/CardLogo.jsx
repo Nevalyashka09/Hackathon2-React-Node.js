@@ -2,13 +2,17 @@ import React, { useContext } from "react";
 import AppContext from "./Context/AppContext";
 
 function CardLogo() {
-  const { setMarque, brands, setTimeline } = useContext(AppContext);
+  const { setMarque, setMarqueId, brands, setTimeline } =
+    useContext(AppContext);
 
-  const handleCardClick = (name) => {
-    setMarque(name);
+  const handleCardClick = (card) => {
+    console.info(card);
+    setMarque(card.name);
     setTimeline(2);
-    console.log(name);
-    console.log(Timeline);
+    setMarqueId(card.brands_id);
+    console.log("card name est ", card.name);
+    console.log("card id est ", card.brands_id);
+    console.log("Timeline est ", Timeline);
   };
 
   return (
@@ -36,7 +40,7 @@ function CardLogo() {
               borderRadius: "30px",
               cursor: "pointer",
             }}
-            onClick={() => handleCardClick(card.name)}
+            onClick={() => handleCardClick(card)}
           />
         ))}
     </div>
