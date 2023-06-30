@@ -8,7 +8,7 @@ function StorageAccordion() {
   const { stockage, setStockage } = useContext(AppContext);
   console.info("Valeur du stockage", stockage);
   return (
-    <div>
+    <div className="flex gap-2">
       {storageData.map((storageItem) => (
         <Button
           key={storageItem.id}

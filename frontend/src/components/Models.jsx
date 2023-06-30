@@ -36,8 +36,8 @@ function CardLogo() {
   };
 
   return (
-    <div>
-      <Box sx={{ minWidth: 120 }}>
+    <div className="flex flex-col gap-4 items-center">
+      <Box sx={{ width: 500 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Model</InputLabel>
           <Select
@@ -55,7 +55,9 @@ function CardLogo() {
           </Select>
         </FormControl>
       </Box>
+      <h4>Espace de Stockage du téléphone</h4>
       <StorageAccordion />
+      <h4>RAM du téléphone</h4>
       <RamAccordion />
       <Button
         className="bg-primary-50"
@@ -66,20 +68,6 @@ function CardLogo() {
       >
         confirmer
       </Button>
-      {/* <Accordion>
-        <AccordionSummary>
-          <Typography>Phone Mode</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Select value={selectedMode} onChange={handleModeSelect}>
-            {dataSmartphone.map((phone) => (
-              <MenuItem key={phone.id} value={phone.model_name}>
-                {phone.model_name}
-              </MenuItem>
-            ))}
-          </Select>
-        </AccordionDetails>
-      </Accordion> */}
     </div>
   );
 }
