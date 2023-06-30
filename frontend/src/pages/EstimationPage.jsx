@@ -9,46 +9,61 @@ import Phone from "../assets/images/phoneSquare.png";
 import Title from "../components/Title";
 import boy from "../assets/images/boy.png";
 import girl from "../assets/images/girl.png";
+import Etat from "../components/Etat";
+import ContentFonctionalite from "../components/ContentFonctionalite";
+import ContentRecap from "../components/ContentRecap";
 
 export default function EstimationPage() {
   const {
-    minimalConditions,
-    deviceBrandCompleted,
-    deviceInfoCompleted,
-    deviceStateCompleted,
-    recapCompleted,
-    seeEstimation,
+    timeline,
+    setTimeline,
+    // minimalConditions,
+    // deviceBrandCompleted,
+    // deviceInfoCompleted,
+    // deviceStateCompleted,
+    // recapCompleted,
   } = useContext(AppContext);
 
-  const [brands, setBrands] = useState([]);
-  const [models, setModels] = useState([]);
-  const [storages, setStorage] = useState([]);
-  const [rams, setRams] = useState([]);
+  const [initialLoading, setInitialLoading] = useState(false);
 
-  useEffect(() => {
-    fetch("brands", setBrands);
-    fetch("storages", setStorage);
-    fetch("rams", setRams);
-    fetch("models", setModels);
-  }, []);
+  // useEffect(() => {
+  //   setInitialLoading(true);
+  //   console.info("initialoading is", initialLoading);
 
-  // pour information dans la console
-
-  useEffect(() => {
-    console.info("brands", brands);
-  }, [brands]);
-
-  useEffect(() => {
-    console.info("storages", storages);
-  }, [storages]);
-
-  useEffect(() => {
-    console.info("rams", rams);
-  }, [rams]);
-
-  useEffect(() => {
-    console.info("models", models);
-  }, [models]);
+  //   if (initialLoading === true) {
+  //     if (minimalConditions) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (deviceBrandCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (deviceInfoCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (deviceStateCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //     if (recapCompleted) {
+  //       setTimeline((prevTimeline) => prevTimeline + 1);
+  //     } else {
+  //       setTimeline((prevTimeline) => prevTimeline - 1);
+  //     }
+  //   }
+  // }, [
+  //   minimalConditions,
+  //   deviceBrandCompleted,
+  //   deviceInfoCompleted,
+  //   deviceStateCompleted,
+  //   recapCompleted,
+  // ]);
 
   return (
     <div>
@@ -63,7 +78,7 @@ export default function EstimationPage() {
           Estimer un prix
         </h3>
         <TimeLine />
-        <Title text="Fonctionnalité de l’appareil" />
+        <Title text="Quel est la marque du téléphone ?" />
         <div
           style={{
             marginTop: "50px",
@@ -72,7 +87,13 @@ export default function EstimationPage() {
             height: "360px",
           }}
         >
-          Hello Bob
+          {timeline === 0 ? <ContentFonctionalite /> : ""}
+          {timeline === 1 ? <p>brand</p> : ""}
+          {timeline === 2 ? <p>données</p> : ""}
+          {timeline === 3 ? <p>Accessoiers</p> : ""}
+          {timeline === 4 ? <Etat /> : ""}
+          {timeline === 5 ? <ContentRecap /> : ""}
+          {timeline === 6 ? <p>Price</p> : ""}
         </div>
         <img
           style={{
@@ -120,29 +141,3 @@ export default function EstimationPage() {
     </div>
   );
 }
-
-// RENDU CONDITIONNEL DE TEST pour les futurs composants
-
-// {
-//   minimalConditions !== undefined && !minimalConditions && <Modal />;
-// }
-
-// {
-//   minimalConditions !== undefined && minimalConditions && <Brand />;
-// }
-
-// {
-//   deviceBrandCompleted && <Infos />;
-// }
-
-// {
-//   deviceInfoCompleted && <State />;
-// }
-
-// {
-//   deviceStateCompleted && <Recap />;
-// }
-
-// {
-//   recapCompleted && <Price />;
-// }

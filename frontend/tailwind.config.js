@@ -26,17 +26,6 @@ module.exports = {
         secondary: {
           600: "#439BCD",
         },
-        chip: {
-          blue: "#2196F3",
-          orange: "#ED6C02",
-          green: "#AFE2B1",
-        },
-        status: {
-          green: "#AFE2B1",
-        },
-        user: {
-          warningRed: "#D32F2F",
-        },
       },
     },
   },
