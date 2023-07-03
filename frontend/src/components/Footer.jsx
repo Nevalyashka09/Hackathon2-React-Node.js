@@ -1,17 +1,22 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Typography, Box, Container, Button } from "@mui/material";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="#EBEBEB">
+    <Typography variant="body2" className="text-primary-900">
       {"© "}
       {new Date().getFullYear()}
       &nbsp;
-      <Link color="inherit" href="https://emmaus-connect.org/" underline="none">
+      <Link
+        color="inherit"
+        href="https://emmaus-connect.org/"
+        underline="none"
+        className="text-primary-900"
+      >
         Emmaüs Connect
-      </Link>{" "}
+      </Link>
     </Typography>
   );
 }
@@ -38,16 +43,16 @@ export default function StickyFooter() {
         <Container className="flex flex-col justify-center items-center">
           <div>
             <Button
-              style={{ color: "#EBEBEB", fontWeight: "bold" }}
               component={Link}
               to="/contact"
+              className="text-primary-900 font-bold"
             >
               Contact
             </Button>
             <Button
-              style={{ color: "#EBEBEB", fontWeight: "bold" }}
               component={Link}
               to="/faq"
+              className="text-primary-900 font-bold"
             >
               FAQ
             </Button>
