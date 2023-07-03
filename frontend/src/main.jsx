@@ -10,6 +10,7 @@ import MaxLengthProvider from "./context/MaxLengthContext";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import EstimationPage from "./pages/EstimationPage";
+import FAQ from "./pages/FAQ";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/estimation",
         element: <EstimationPage />,
+      },
+      {
+        path: "/faq",
+        element: <FAQ />,
       },
     ],
   },
