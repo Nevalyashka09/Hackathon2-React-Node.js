@@ -1,23 +1,12 @@
 import { Paper, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 import Hands from "../assets/Hands.png";
 
 function CardImpactAppareils() {
-  const [isBouncing, setIsBouncing] = useState(false);
-
-  useEffect(() => {
-    setIsBouncing(true);
-    const timer = setTimeout(() => setIsBouncing(false), 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div>
       <Paper
         elevation={6}
-        className={`p-5 flex flex-col justify-center items-center ${
-          isBouncing ? "bounce" : ""
-        }`}
+        className="p-5 flex flex-col justify-center items-center animate-fall"
         style={{ borderRadius: "16px", height: "350px", width: "370px" }}
       >
         <div className="flex flex-col justify-center items-center">
